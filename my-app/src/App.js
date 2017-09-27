@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Menu from './Components/Menu/Menu'
+import Header from './Components/Header/Header.js'
 import Calendar from './Components/Calendar/Calendar.js'
 import Notat from './Components/Notat/Notat.js'
-import Header from './Components/Header/Header.js'
+import ToDo from './Components/ToDo/ToDo.js'
+import Reminders from './Components/Reminders/Reminder.js'
 import './App.css';
 
 
@@ -13,25 +15,12 @@ class App extends Component {
     this.state = {
       active: 0,
     };
-    this.showCalendar = this.showCalendar.bind(this)
-    this.showNote = this.showNote.bind(this)
+    this.changeState = this.changeState.bind(this)
   }
 
   changeState(i){
-    
-  }
-
-  showCalendar(i){
-    console.log("Calendar")
     this.setState(state => {
-            return {active: 0};
-        });
-  }
-
-  showNote(i){
-    console.log("notes")
-    this.setState(state => {
-            return {active: 1};
+            return {active: i};
         });
   }
 
@@ -40,7 +29,7 @@ class App extends Component {
       return (
         <div>
             <Header />
-            <Menu Calendar={this.showCalendar} Notes={this.showNote}/>
+            <Menu State={this.changeState}/>
             <Calendar ref="Calendar"/>
         </div>
       );
@@ -48,8 +37,24 @@ class App extends Component {
       return (
         <div>
             <Header />
-            <Menu Calendar={this.showCalendar} Notes={this.showNote}/>
+            <Menu State={this.changeState}/>
             <Notat ref="Notat" />
+        </div>
+      );
+    }else if(this.state.active === 2){
+      return (
+        <div>
+            <Header />
+            <Menu State={this.changeState}/>
+            <ToDo ref="ToDo" />
+        </div>
+      );
+    }else if(this.state.active === 3){
+      return (
+        <div>
+            <Header />
+            <Menu State={this.changeState}/>
+            <Notat ref="Reminders" />
         </div>
       );
     }
