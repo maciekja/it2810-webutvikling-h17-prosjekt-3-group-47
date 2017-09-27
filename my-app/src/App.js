@@ -6,11 +6,10 @@ import './App.css';
 class Main extends React.Component {
    constructor(props) {
     super(props);
-    this.newNote = this.newNote.bind(this); //when save form
-    this.saveNote = this.saveNote.bind(this); //localStorage & this.state
+    this.newNote = this.newNote.bind(this)
+    this.saveNote = this.saveNote.bind(this);
     this.removeNote = this.removeNote.bind(this);
-    this.updateNote = this.updateNote.bind(this); //whan clicked save-icon in a note
-
+    this.updateNote = this.updateNote.bind(this);
     this.state = {notes:[]};
   }
 
@@ -20,7 +19,7 @@ class Main extends React.Component {
          this.setState({notes: JSON.parse(notes)});
   }
 
-  newNote(title, text) { //prepend new object
+  newNote(title, text) {
     let notes = [{title: title, text: text}].concat(this.state.notes);
     this.saveNote(notes);
   }
@@ -43,7 +42,7 @@ class Main extends React.Component {
     this.saveNote(notes);
   }
 
-  render() { //Conditional rendering: Ternary operator shows saved notes from local storage. Or plain text
+  render() {
 
   let notes = this.state.notes.map((obj, i) =>
                <Note key={i} index={i} title={obj.title} text={obj.text} onUpdate={this.updateNote} onRemove={this.removeNote} />
@@ -51,12 +50,7 @@ class Main extends React.Component {
 
     return ( <div className="container-fluid">
 
-              <div className="row header">
-                <h1 className="col-2">Notes</h1>
-                <div className="col-1 offset-7 offset-md-9">
-                  <button  type="button" className="btn btn-warning" data-toggle="collapse" data-target="#form">+</button>
-                </div>
-              </div>
+              <button type="button" className="btn btnPlus" data-toggle="collapse" data-target="#form">+</button>
 
               <Form onSend={this.newNote}/>
 
@@ -70,11 +64,11 @@ class Main extends React.Component {
 
 class Form extends React.Component {
   constructor(props) {
-    super(props);    //controlled component, so it needs so many handlers
+    super(props);
     this.changeTitle = this.changeTitle.bind(this);
     this.changeText = this.changeText.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleCancel = this.handleCancel.bind(this);
+    this.handleClear = this.handleClear.bind(this);
 
     this.state = {title: '', text: ''};
   }
@@ -87,12 +81,12 @@ class Form extends React.Component {
     this.setState({text: e.target.value});
   }
 
-  handleSubmit(e) { //here is a "Lift state up" on the parent component
+  handleSubmit(e) {
     this.props.onSend(this.state.title, this.state.text);
-    this.handleCancel(e); //reset form text and cancel reload of the page
+    this.handleClear(e);
   }
 
-  handleCancel(e) {
+  handleClear(e) {
     this.setState({title: '', text: ''});
     e.preventDefault();
   }
@@ -111,7 +105,7 @@ class Form extends React.Component {
                   </div>
 
                   <button onClick={this.handleSubmit} className="btn">Save</button>
-                  <button onClick={this.handleCancel} className="btn">Cancel</button>
+                  <button onClick={this.handleClear} className="btn">Clear</button>
               </form>  )
   }
 }
@@ -122,18 +116,18 @@ class Note extends React.Component {
     this.changeTitle = this.changeTitle.bind(this);
     this.changeText = this.changeText.bind(this);
 
-    this.edit = this.edit.bind(this); //to the parent
-    this.delete = this.delete.bind(this); //to the parent
+    this.edit = this.edit.bind(this);
+    this.delete = this.delete.bind(this);
 
     this.state = {title: this.props.title, text: this.props.text, editing: false}; //by default render as text
   }
 
-  edit() { //lift state up to the parent
+  edit() {
     this.props.onUpdate(this.props.index, this.state.title, this.state.text);
     this.setState({editing: !this.state.editing});
   }
 
-  delete() { //lift state up to the parent
+  delete() {
     this.props.onRemove(this.props.index);
   }
 
@@ -145,11 +139,11 @@ class Note extends React.Component {
     this.setState({text: e.target.value});
   }
 
-  renderNoteOrEdit() { //when clicks edit button pencil-icon toggle between input and div
+  renderNoteOrEdit() {
     if(this.state.editing) {
       return (<div className="inner">
                 <div className="title">
-                     <span>Title</span>
+                     <span>Edit</span>
                      <button type="button" className="btn del" onClick={this.delete}><i className="fa fa-trash"></i></button>
                      <button type="button" className="btn save" onClick={this.edit}><i className="fa fa-floppy-o"></i></button>
                 </div>
@@ -175,8 +169,8 @@ class Note extends React.Component {
                </div>)
     }
   }
-  render() { //render function based on value {this.state.editing}
-    return ( <div className="note col-sx-10 col-sm-6 col-md-4">
+  render() { //xs for phone, sm for tablet, md for desktop
+    return ( <div className="note col-xs-10 col-sm-6 col-md-4">
                 {this.renderNoteOrEdit()}
              </div>
     )

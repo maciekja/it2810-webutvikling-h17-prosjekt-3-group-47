@@ -1,21 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito|Ranga");
-body {
-  font-family: 'Nunito', serif;
-}
 
-.header {
-  background-color: #4682B4;
-  color: #fff;
-  font-family: 'Ranga', cursive;
-}
-
-.header {
-  height: 50px;
-  padding: 5px 0 0 10px;
-  margin-bottom: 2vh;
-}
-
-.btn-warning {
+.btn-plus {
   width: 60px;
   height: 60px;
   text-align: center;
@@ -24,7 +8,22 @@ body {
   display: block;
   border-radius: 50%;
   text-decoration: none;
-  font-weight: bold;
+  color: #fff;
+  background-color: #000000;
+  border: none;
+}
+
+.btn-plus:hover {
+    color: #fff;
+    background-color: #a2a2a2;
+    border: none;
+}
+
+.btn-plus:active {
+    color: #fff;
+    background-color: #000000;
+    background-image: none;
+    border: none;
 }
 
 form {
