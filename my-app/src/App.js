@@ -13,10 +13,26 @@ class App extends Component {
     this.state = {
       active: 0,
     };
+    this.showCalendar = this.showCalendar.bind(this)
+    this.showNote = this.showNote.bind(this)
   }
 
   changeState(i){
-    this.state.active = i;
+    
+  }
+
+  showCalendar(i){
+    console.log("Calendar")
+    this.setState(state => {
+            return {active: 0};
+        });
+  }
+
+  showNote(i){
+    console.log("notes")
+    this.setState(state => {
+            return {active: 1};
+        });
   }
 
   render() {
@@ -24,7 +40,7 @@ class App extends Component {
       return (
         <div>
             <Header />
-            <Menu links={this.changeState}/>
+            <Menu Calendar={this.showCalendar} Notes={this.showNote}/>
             <Calendar ref="Calendar"/>
         </div>
       );
@@ -32,7 +48,7 @@ class App extends Component {
       return (
         <div>
             <Header />
-            <Menu />
+            <Menu Calendar={this.showCalendar} Notes={this.showNote}/>
             <Notat ref="Notat" />
         </div>
       );

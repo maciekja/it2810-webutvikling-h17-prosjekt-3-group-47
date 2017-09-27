@@ -8,7 +8,8 @@ class Menu extends Component {
       <div className="menu">
         <h2>menu</h2>
         <ul>
-          <li><button type="button" onClick={this.props.links(1)}>To do</button></li>
+          <li><button type="button" onClick={this.props.Calendar}>Calendar</button></li>
+          <li><button type="button" onClick={this.props.Notes}>Notes</button></li>
         </ul>
       </div>
     );
@@ -16,7 +17,8 @@ class Menu extends Component {
 }
 
 Menu.propTypes = {
-  links: React.PropTypes.func
+  Calendar: React.PropTypes.func,
+  Note: React.PropTypes.func
 };
 
 export default Menu;
