@@ -86,55 +86,6 @@ class Notat extends Component {
   }
 }
 
-class Form extends React.Component {
-  constructor(props) {
-    super(props);
-    this.changeTitle = this.changeTitle.bind(this);
-    this.changeText = this.changeText.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleClear = this.handleClear.bind(this);
-
-    this.state = {title: '', text: ''};
-  }
-
-  changeTitle(e) {
-    this.setState({title: e.target.value});
-  }
-
-  changeText(e) {
-    this.setState({text: e.target.value});
-  }
-
-  handleSubmit(e) {
-    this.props.onSend(this.state.title, this.state.text);
-    this.handleClear(e);
-  }
-
-  handleClear(e) {
-    this.setState({title: '', text: ''});
-    e.preventDefault();
-  }
-
-  render() {
-    return ( <form className="collapse" id="form">
-                  <div className="form-group">
-                     <label htmlFor="exampleInputEmail1">Title</label>
-                     <input type="text" value={this.state.title} onChange={this.changeTitle}
-                            className="form-control" placeholder="Enter title" />
-                  </div>
-
-                  <div className="form-group">
-                     <textarea  name="text" value={this.state.text} onChange={this.changeText}
-                                placeholder="Enter message" className="form-control" rows="4"/>
-                  </div>
-
-                  <button onClick={this.handleSubmit} className="btn">Save</button>
-                  <button onClick={this.handleClear} className="btn">Clear</button>
-              </form>  )
-  }
-}
-
-
 class Note extends React.Component {
   constructor(props) {
     super(props);
@@ -199,6 +150,54 @@ class Note extends React.Component {
                 {this.renderNoteOrEdit()}
              </div>
     )
+  }
+}
+
+class Form extends React.Component {
+  constructor(props) {
+    super(props);
+    this.changeTitle = this.changeTitle.bind(this);
+    this.changeText = this.changeText.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClear = this.handleClear.bind(this);
+
+    this.state = {title: '', text: ''};
+  }
+
+  changeTitle(e) {
+    this.setState({title: e.target.value});
+  }
+
+  changeText(e) {
+    this.setState({text: e.target.value});
+  }
+
+  handleSubmit(e) {
+    this.props.onSend(this.state.title, this.state.text);
+    this.handleClear(e);
+  }
+
+  handleClear(e) {
+    this.setState({title: '', text: ''});
+    e.preventDefault();
+  }
+
+  render() {
+    return ( <form className="collapse" id="form">
+                  <div className="form-group">
+                     <label htmlFor="exampleInputEmail1">Title</label>
+                     <input type="text" value={this.state.title} onChange={this.changeTitle}
+                            className="form-control" placeholder="Enter title" />
+                  </div>
+
+                  <div className="form-group">
+                     <textarea  name="text" value={this.state.text} onChange={this.changeText}
+                                placeholder="Enter message" className="form-control" rows="4"/>
+                  </div>
+
+                  <button onClick={this.handleSubmit} className="btn">Save</button>
+                  <button onClick={this.handleClear} className="btn">Clear</button>
+              </form>  )
   }
 }
 
