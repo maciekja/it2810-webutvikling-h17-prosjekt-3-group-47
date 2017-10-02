@@ -4,7 +4,7 @@ import Header from './Components/Header/Header.js'
 import Calendar from './Components/Calendar/Calendar.js'
 import Notat from './Components/Notat/Notat.js'
 import ToDo from './Components/ToDo/ToDo.js'
-import Reminders from './Components/Reminders/Reminder.js'
+import Reminders from './Components/Reminders/Reminders.js'
 import './App.css';
 
 
@@ -54,7 +54,7 @@ class App extends Component {
         <div>
             <Header />
             <Menu State={this.changeState}/>
-            <Notat ref="Reminders" />
+            <Reminders ref="Reminders" />
         </div>
       );
     }
