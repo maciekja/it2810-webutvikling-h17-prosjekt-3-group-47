@@ -1,33 +1,21 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Menu.css';
-import './../../App.js'
 
 class Menu extends Component {
-
-
-  setParentState(i){
-    this.props.State(i);
-    console.log(i);
-  }
-
   render() {
     return (
       <div className="menu">
         <h2>menu</h2>
         <ul>
-          <li><button type="button" onClick={() => this.setParentState(0)}>Calendar</button></li>
-          <li><button type="button" onClick={() => this.setParentState(1)}>Notes</button></li>
-          <li><button type="button" onClick={() => this.setParentState(2)}>To Do</button></li>
-          <li><button type="button" onClick={() => this.setParentState(3)}>Reminders</button></li>
+          <Link to="calendar"><li><button type="button">Calendar</button></li></Link>
+          <Link to="notes"><li><button type="button">Notes</button></li></Link>
+          <Link to="todo"><li><button type="button">To Do</button></li></Link>
+          <Link to="reminders"><li><button type="button">Reminders</button></li></Link>
         </ul>
       </div>
     );
   }
 }
-
-Menu.propTypes = {
-  Calendar: React.PropTypes.func,
-  Note: React.PropTypes.func
-};
 
 export default Menu;

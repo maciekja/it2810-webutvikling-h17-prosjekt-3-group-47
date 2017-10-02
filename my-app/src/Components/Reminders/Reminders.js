@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
 
-class Reminders extends React.Component {
+class Reminders extends Component {
   render() {
     return (<p>1</p>);
   }
