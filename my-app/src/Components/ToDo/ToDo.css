@@ -11,6 +11,7 @@
 	flex-wrap: wrap;
 	padding: 5px;
 	border-radius: 5px;
+	margin-bottom: 5px;
 	background-color: rgba(32, 32, 64, 0.5);
 } .head-left {
 	text-align: center;
