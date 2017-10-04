@@ -3,8 +3,6 @@ import './LandingPage.css';
 
 class LandingPage extends Component {
   render() {
-    
-
     return (
       <div className="LandingPage">
         <h1>SuperPIM</h1>
