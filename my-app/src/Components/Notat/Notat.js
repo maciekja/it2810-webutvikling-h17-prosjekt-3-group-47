@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Notat.css';
-import './CSS1.css'
 
 class Notat extends Component {
   constructor(props) {
