@@ -1,35 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
+import BigCalendar from 'react-big-calendar';
+import moment from 'moment';
 
-class Calendar extends Component {
-  constructor() {
-    super();
+// Setup the localizer by providing the moment (or globalize) Object
+// to the correct localizer.
+BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
 
-    this.state = {
-      active: true,
-    };
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    console.log("hehe")
-    this.setState({
-      active: !this.state.active,
-    });
-  }
-  render() {
-    if(this.state.active){
-      return (
-        <div className="Calendar">
-          <h1>Vises jeg?</h1>
-        </div>
-      );
-    }else{
-      return(
-        <h1>lili</h1>
-      );
-    }
-  }
-}
-
+const Calendar = props => (
+  <div>
+    <BigCalendar
+      events={myEventsList}
+      startAccessor='startDate'
+      endAccessor='endDate'
+    />
+  </div>
+);
 export default Calendar;
