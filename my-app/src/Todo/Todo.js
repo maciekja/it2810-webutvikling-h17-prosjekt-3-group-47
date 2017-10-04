@@ -19,7 +19,7 @@ class Todo extends React.Component {
   }
 
   newTodo(title, text) {
-    let todos = [{title: title, text: text}].concat(this.state.todos);
+    let todos = [{title: title, done: true}].concat(this.state.todos);
     this.saveTodo(todos);
   }
 
@@ -34,17 +34,16 @@ class Todo extends React.Component {
     this.saveTodo(todos);
   }
 
-  updateTodo(index, title, text) {
+  updateTodo(index, done) {
     let todos = this.state.todos;
-    todos[index].title = title;
-    todos[index].text = text;
+		todos[index].done = done;
     this.saveTodo(todos);
   }
 
   render() {
 
   let todos = this.state.todos.map((obj, i) =>
-               <TodoItem key={i} index={i} title={obj.title} onUpdate={this.updateTodo} onRemove={this.removeTodo} />
+               <TodoItem key={i} index={i} title={obj.title} done={obj.done} onUpdate={this.updateTodo} onRemove={this.removeTodo} />
                );
 
     return (	<div className="content">
@@ -61,6 +60,7 @@ class Head extends React.Component {
   constructor(props) {
     super(props);
     this.changeTitle = this.changeTitle.bind(this);
+		this.changeDone = this.changeDone.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
     this.state = {title: ''};
@@ -70,17 +70,24 @@ class Head extends React.Component {
     this.setState({title: e.target.value});
   }
 
+	changeDone(e) {
+		this.setState({done: e.target.value});
+	}
+
   handleSubmit(e) {
-    this.props.onSend(this.state.title);
+    if(this.state.title != '') {
+			this.props.onSend(this.state.title);
+			this.setState({title: ''});
+		}
   }
 
 
   render() {
     return (		<div className="head">
-	              	<label>Title</label>
+	              	<h2>Todo list:</h2>
 	               	<input type="text" value={this.state.title} onChange={this.changeTitle}
 	                            className="Head-control" placeholder="Enter title" />
-								<button onClick={this.handleSubmit} className="btn">Save</button>
+								<span onClick={this.handleSubmit} className="btn">Save</span>
               	</div>	)
   }
 }
@@ -89,11 +96,10 @@ class TodoItem extends React.Component {
   constructor(props) {
     super(props);
     this.changeTitle = this.changeTitle.bind(this);
-
     this.change = this.change.bind(this);
     this.delete = this.delete.bind(this);
 
-    this.state = {title: this.props.title, done: false}; //by default render as text
+    this.state = {title: this.props.title, done: this.props.done}; //by default render as text
   }
 
   change() {
@@ -108,28 +114,26 @@ class TodoItem extends React.Component {
     this.setState({title: e.target.value});
   }
 
-  renderTodoItemOrchange() {
-    if(this.state.done) {
-      return (<div className="done">
+  renderDoneOrNot() {
+    if(this.props.done) {
+      return (<div className="todoitem done" onClick={this.change}>
                 <div className="title">
 									{this.props.title}
-                  <button type="button" className="btn del" onClick={this.delete}></button>
-                  <button type="button" className="btn save" onClick={this.change}></button>
+                  <span className="close" onClick={this.delete}>&times;</span>
                 </div>
              </div>)
     } else {
-       return (<div className="not-done">
+       return (<div className="todoitem not-done" onClick={this.change}>
                  <div className="title">
                      {this.props.title}
-                     <button type="button" className="btn del" onClick={this.delete}></button>
-                     <button type="button" className="btn" onClick={this.change}></button>
+                     <span className="close" onClick={this.delete}>&times;</span>
                  </div>
                </div>)
     }
   }
   render() { //xs for phone, sm for tablet, md for desktop
     return ( <div className="TodoItem col-xs-10 col-sm-6 col-md-4">
-                {this.renderTodoItemOrchange()}
+                {this.renderDoneOrNot()}
              </div>
     )
   }

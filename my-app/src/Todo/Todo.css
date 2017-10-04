@@ -1,40 +1,43 @@
 .content {
+	width: 800px;
 	display: flex;
 	flex-direction: column;
-	border: 8px red dashed;
-	width: 20vw;
+	overflow-x: auto;
 }
 
 .head {
 	display: flex;
 	border: 2px green dotted;
+} .head h2 {
+	margin: 0;
+	justify-content: center;
+} .head span {
+
 }
 
-.doneTitle {
-	text-decoration: line-through;
-}
-
-.inner {
-	border: 2px pink dashed;
-}
 
 .btn {
 	min-height: 20px;
 	min-width: 20px;
-}
-
-.del {
 	background-color: red;
 }
-
-.container-fluid {
-	border: 10px cyan dotted;
-}
-
-.not-done {
+.TodoItem {
+	user-select: none;
+	cursor: pointer;
+	position: relative;
+	white-space: nowrap;
+	text-overflow: hidden;
+} .not-done {
 	background-color: gray;
+} .done {
+	background: green;
 }
 
-.done {
-	background: green;
+.close {
+	position: absolute;
+	width: 30px;
+	right: 0;
+	top: 0;
+	background: rgba(128, 128, 128, 0.8);
+	text-align: center;
 }
