@@ -1,25 +1,53 @@
 .content {
-	width: 800px;
+	width: 95vw;
 	display: flex;
 	flex-direction: column;
 	overflow-x: auto;
+	padding: 5px;
+	padding-right: 5px;
 }
 
 .head {
 	display: flex;
-	border: 2px green dotted;
-} .head h2 {
-	margin: 0;
-	justify-content: center;
-} .head span {
+	flex-wrap: wrap;
+	padding: 5px;
+	border-radius: 5px;
+	background-color: rgba(32, 32, 64, 0.5);
+} .head-left {
+	text-align: center;
+	font-size: 24px;
+	flex: 1;
+	margin: 5px 0px;
+	display: flex;
+} .head-left * {
+	flex: 1;
+	align-self: center;
+}.head-right {
+	flex: 2;
+	display: flex;
+	flex-wrap: wrap;
+} .head-input {
+	flex: 2;
+	font-size: 18px;
+	padding-left: 20px;
+	border: 0;
+	border-radius: 5px;
+	margin: 5px 5px;
+} .save {
+	padding: 10px;
+	margin: 5px 5px;
+  background: #d9d9d9;
+	flex: 1;
+  color: #555;
+  float: left;
+	margin-left: 5px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+	border-radius: 5px;
+} .save:hover {
 
-}
-
-
-.btn {
-	min-height: 20px;
-	min-width: 20px;
-	background-color: red;
 }
 .TodoItem {
 	user-select: none;
@@ -27,17 +55,25 @@
 	position: relative;
 	white-space: nowrap;
 	text-overflow: hidden;
+	overflow: hidden;
+	margin-bottom: 1px;
+	border: 3px rgba(128, 128, 128, 0.3) solid;
+	border-radius: 5px;
 } .not-done {
-	background-color: gray;
+	padding: 2px 20px;
+	background-color: rgba(16, 16, 16, 0.3);
 } .done {
-	background: green;
+	text-decoration: line-through;
+	padding: 2px 20px;
+	background: rgba(16, 64, 16, 0.3);
 }
 
 .close {
 	position: absolute;
 	width: 30px;
+	height: 30px;
 	right: 0;
 	top: 0;
-	background: rgba(128, 128, 128, 0.8);
+	background: rgba(256, 128, 128, 0.4);
 	text-align: center;
 }

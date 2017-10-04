@@ -19,7 +19,7 @@ class Todo extends React.Component {
   }
 
   newTodo(title, text) {
-    let todos = [{title: title, done: true}].concat(this.state.todos);
+    let todos = [{title: title, done: false}].concat(this.state.todos);
     this.saveTodo(todos);
   }
 
@@ -63,7 +63,7 @@ class Head extends React.Component {
 		this.changeDone = this.changeDone.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
-    this.state = {title: ''};
+    this.state = {title: '', done: true};
   }
 
   changeTitle(e) {
@@ -76,18 +76,23 @@ class Head extends React.Component {
 
   handleSubmit(e) {
     if(this.state.title != '') {
-			this.props.onSend(this.state.title);
+			this.props.onSend(this.state.title, this.state.done);
 			this.setState({title: ''});
+			e.preventDefault();
 		}
   }
 
 
   render() {
     return (		<div className="head">
-	              	<h2>Todo list:</h2>
-	               	<input type="text" value={this.state.title} onChange={this.changeTitle}
-	                            className="Head-control" placeholder="Enter title" />
-								<span onClick={this.handleSubmit} className="btn">Save</span>
+	              	<div className="head-left">
+										<span>Todo list:</span>
+									</div>
+	               	<div className="head-right">
+										<input type="text" value={this.state.title} onChange={this.changeTitle}
+	                            className="head-input" placeholder="Enter title" />
+										<span onClick={this.handleSubmit} className="save">Save</span>
+									</div>
               	</div>	)
   }
 }
@@ -96,6 +101,7 @@ class TodoItem extends React.Component {
   constructor(props) {
     super(props);
     this.changeTitle = this.changeTitle.bind(this);
+		this.changeDone = this.changeDone.bind(this);
     this.change = this.change.bind(this);
     this.delete = this.delete.bind(this);
 
@@ -103,6 +109,7 @@ class TodoItem extends React.Component {
   }
 
   change() {
+		this.props.onUpdate(this.props.index,  this.state.done);
     this.setState({done: !this.state.done});
   }
 
@@ -114,20 +121,24 @@ class TodoItem extends React.Component {
     this.setState({title: e.target.value});
   }
 
+	changeDone(e) {
+		this.setState({done: e.target.value});
+	}
+
   renderDoneOrNot() {
     if(this.props.done) {
-      return (<div className="todoitem done" onClick={this.change}>
-                <div className="title">
+      return (<div className="todoitem done">
+                <div className="title" onClick={this.change}>
 									{this.props.title}
-                  <span className="close" onClick={this.delete}>&times;</span>
                 </div>
+								<span className="close" onClick={this.delete}>&times;</span>
              </div>)
     } else {
-       return (<div className="todoitem not-done" onClick={this.change}>
-                 <div className="title">
+       return (<div className="todoitem not-done">
+                 <div className="title" onClick={this.change}>
                      {this.props.title}
-                     <span className="close" onClick={this.delete}>&times;</span>
                  </div>
+								 <span className="close" onClick={this.delete}>&times;</span>
                </div>)
     }
   }
