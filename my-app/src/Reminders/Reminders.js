@@ -6,6 +6,8 @@ import './Reminders.css';
 import 'react-datepicker/dist/react-datepicker.css';
 
 class Reminders extends Component {
+  let reminders = [];
+
   constructor(props) {
     super(props)
     this.state = {
@@ -20,16 +22,12 @@ class Reminders extends Component {
     });
   }
 
-  addToList() {
-      var note = document.getElementById("note").value;
-      var date = document.getElementById("date").value;
-      if(note !== "") {
-        var node = document.createElement("li");
-        var reminder = document.createTextNode("(" + date + ") - " + note);
-        node.appendChild(reminder);
-        document.getElementById("list").appendChild(node);
-        document.getElementById("note").value = "";
-      }
+  removeNode() {
+    console.log(1);
+  }
+
+  addtoList() {
+    reminders.
   }
 
   render() {

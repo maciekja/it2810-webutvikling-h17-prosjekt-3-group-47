@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Menu from './Components/Menu/Menu';
+import Header from './Components/Header/Header.js';
 import './App.css';
+
 
 class App extends Component {
   render() {
-    return (
-      <p></p>
+    return(
+    <div>
+      <Header />
+      <Menu />
+      {this.props.children}
+    </div>
     );
   }
 }
