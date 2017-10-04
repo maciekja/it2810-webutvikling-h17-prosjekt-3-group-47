@@ -1,7 +1,7 @@
 .content {
 	display: flex;
 	flex-direction: column;
-	border: 2px red dashed;
+	border: 8px red dashed;
 	width: 20vw;
 }
 
@@ -10,6 +10,9 @@
 	border: 2px green dotted;
 }
 
+.doneTitle {
+	text-decoration: line-through;
+}
 
 .inner {
 	border: 2px pink dashed;

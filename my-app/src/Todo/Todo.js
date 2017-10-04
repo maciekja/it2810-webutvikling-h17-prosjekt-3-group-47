@@ -47,8 +47,8 @@ class Todo extends React.Component {
                <TodoItem key={i} index={i} title={obj.title} onUpdate={this.updateTodo} onRemove={this.removeTodo} />
                );
 
-    return (	<div className="container-fluid">
-								<Form onSend={this.newTodo}/>
+    return (	<div className="content">
+								<Head onSend={this.newTodo}/>
               	<div className="container-fluid">
                   {this.state.todos.length > 0 ? todos : ""}
               	</div>
@@ -57,7 +57,7 @@ class Todo extends React.Component {
   }
 }
 
-class Form extends React.Component {
+class Head extends React.Component {
   constructor(props) {
     super(props);
     this.changeTitle = this.changeTitle.bind(this);
@@ -76,16 +76,12 @@ class Form extends React.Component {
 
 
   render() {
-    return (	<div className="content">
-								<div className="head">
+    return (		<div className="head">
 	              	<label>Title</label>
 	               	<input type="text" value={this.state.title} onChange={this.changeTitle}
-	                            className="form-control" placeholder="Enter title" />
-								</div>
+	                            className="Head-control" placeholder="Enter title" />
 								<button onClick={this.handleSubmit} className="btn">Save</button>
-              </div>
-
-                )
+              	</div>	)
   }
 }
 
@@ -101,7 +97,6 @@ class TodoItem extends React.Component {
   }
 
   change() {
-    this.props.onUpdate(this.props.index, this.state.title);
     this.setState({done: !this.state.done});
   }
 
