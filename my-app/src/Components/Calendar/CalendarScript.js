@@ -1,9 +1,15 @@
+/* Based on https://www.codementor.io/chrisharrington/building-a-calendar-using-react-js--less-css-and-font-awesome-du107z6nt */
+/* similar solution https://codepen.io/nickjvm/pen/bERraX */
+/* https://dribbble.com/shots/2335073-Calendar-App-Animation */
+/* https://stackoverflow.com/questions/16469548/overflowhidden-not-working-with-translation-in-positive-direction */
+
 import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import './Calendar.css';
 
 var moment = require('moment');
 var confirm = require('confirm');
+
+//const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -469,5 +475,3 @@ class Day extends React.Component {
     );
   }
 }
-
-export default Calendar;
