@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Notat.css';
+import './CSS1.css'
 
 class Notat extends Component {
   constructor(props) {
@@ -56,9 +57,9 @@ class Notat extends Component {
     let notes = this.state.notes.map((obj, i) =>
               <Note key={i} index={i} title={obj.title} text={obj.text} onUpdate={this.updateNote} onRemove={this.removeNote} />
               );
-    if(this.state.active){
       return (
         <div className="container-fluid">
+              <h1>Notes</h1>
 
                <button type="button" className="btn btnPlus" data-toggle="collapse" data-target="#form">+</button>
 
@@ -69,20 +70,6 @@ class Notat extends Component {
                </div>
            </div>
       );
-    }else{
-      return(
-        <div className="container-fluid">
-
-               <button type="button" className="btn btnPlus" data-toggle="collapse" data-target="#form">+</button>
-
-               <Form onSend={this.newNote}/>
-
-               <div className="container-fluid">
-                   {this.state.notes.length > 0 ? notes : ""}
-               </div>
-           </div>
-      );
-    }
   }
 }
 
