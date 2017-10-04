@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import './Menu.css';
 import './../../App.js'
+import logo from './logo.png'
 
 class Menu extends Component {
   render() {
     return (
       <div className="menu">
-        <h2>menu</h2>
-        <ul>
-          <li><button type="button" onClick={this.props.Calendar}>Calendar</button></li>
-          <li><button type="button" onClick={this.props.Notes}>Notes</button></li>
-        </ul>
+
+          <button type="button" className ="appButton" onClick={this.props.Calendar}>Calendar</button><br />
+          <button type="button" className ="appButton" onClick={this.props.Notes}>Notes</button><br />
+          <button type="button" className ="appButton" onClick={this.props.Calendar}><img src={logo}/></button><br />
+          <button type="button" className ="appButton" onClick={this.props.Notes}>Reminders</button><br />
       </div>
     );
   }

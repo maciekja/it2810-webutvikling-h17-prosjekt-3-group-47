@@ -1,8 +1,55 @@
 .menu {
-  background-color: gray;
-  height: 93vh;
+  background-color: #f6f6f6;
+  height: 83vh;
   width: 20%;
   min-width: 200px;
   float: left;
   overflow-y: hidden;
+}
+
+h1{
+  text-align: center;
+}
+h2{
+  text-align: left;
+}
+
+.appButton {
+  margin-top:1px;
+	font-size:24px;
+	font-family:Arial;
+	font-weight:normal;
+  width: 240px;
+   Height: 125px;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	border:0px solid #dcdcdc;
+	padding:31px 16px;
+	text-decoration:none;
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	background:-ms-linear-gradient( top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #ededed), color-stop(100%, #dfdfdf) );
+	background-color:#ededed;
+	color:#777777;
+	display:inline-block;
+	text-shadow:1px 1px 0px #ffffff;
+ 	-webkit-box-shadow:inset 1px 1px 7px -27px #ffffff;
+ 	-moz-box-shadow:inset 1px 1px 7px -27px #ffffff;
+ 	box-shadow:inset 1px 1px 7px -27px #ffffff;
+  outline:0;
+}
+
+.appButton:hover {
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	background:-ms-linear-gradient( top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #dfdfdf), color-stop(100%, #ededed) );
+	background-color:#dfdfdf;
+}
+
+.appButton:active {
+	position:relative;
+	top:1px;
 }

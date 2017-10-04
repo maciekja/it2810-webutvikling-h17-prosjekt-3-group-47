@@ -1,6 +1,39 @@
 .header {
   position: relative;
   width: 100%;
-  height: 7vh;
-  background: blue;
+  height: 17vh;
+  text-align: left;
+
+}
+
+img{
+  height: 70px;
+  width:200px;
+
+}
+
+#remindersIMG{
+  margin-left: 80px;
+  height: 60px;
+  width:60px;
+}
+#remindMe{
+  margin-left: 220px;
+  height: 80px;
+  width:80px;
+}
+#calendarIMG{
+  margin-left: 80px;
+  height: 60px;
+  width:60px;
+}
+#notesIMG{
+  margin-left: 80px;
+  height: 60px;
+  width:60px;
+}
+#todoIMG{
+  margin-left: 80px;
+  height: 60px;
+  width:60px;
 }

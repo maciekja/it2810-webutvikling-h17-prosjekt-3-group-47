@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './Calendar.css';
+import mycalendar from './calendar.png';
 
 class Calendar extends Component {
   constructor() {
@@ -20,9 +22,10 @@ class Calendar extends Component {
   render() {
     if(this.state.active){
       return (
-        <div className="Calendar">
-          <h1>Vises jeg?</h1>
-        </div>
+      <div className="calendar">
+        <img id="mycalendar" src={mycalendar} />
+      </div>
+
       );
     }else{
       return(
