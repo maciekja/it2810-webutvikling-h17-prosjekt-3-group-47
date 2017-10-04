@@ -58,12 +58,12 @@ form button {
   }
 }
 
-button:active, button:hover, button:focus {
+/*button:active, button:hover, button:focus {
   outline: 0;
   cursor: pointer;
   background: rgba(255, 142, 69, 0.5);
   transform: scale(1.07);
-}
+}*/
 
 textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
   border-color: rgba(229, 103, 23, 0.8);
