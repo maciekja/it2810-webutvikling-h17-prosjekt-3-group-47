@@ -194,6 +194,7 @@ class Calendar extends React.Component {
 
     let allEvents = [];
 
+    /*
     var event1 = {
       title:
         "Press the Add button and enter a name for your event. P.S you can delete me by pressing me!",
@@ -269,7 +270,7 @@ class Calendar extends React.Component {
 
     for (var i = 0; i < allEvents.length; i++) {
       monthEvents.push(allEvents[i]);
-    }
+    } */
 
     this.setState({
       selectedMonthEvents: monthEvents
