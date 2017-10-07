@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 import './Notat.css';
 
 class Notat extends Component {

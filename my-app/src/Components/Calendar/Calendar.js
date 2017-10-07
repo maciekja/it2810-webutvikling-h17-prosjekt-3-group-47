@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import confirm from 'confirm';
+import readline from 'readline';
+import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import './Calendar.css'
 
@@ -21,7 +23,15 @@ class Calendar extends React.Component {
     this.showCalendar = this.showCalendar.bind(this);
     this.goToCurrentMonthView = this.goToCurrentMonthView.bind(this);
 
-    this.initialiseEvents();
+    this.componentDidMount = this.componentDidMount.bind(this);
+
+    /*this.initialiseEvents();*/
+  }
+
+  componentDidMount() {
+    let monthEvents = localStorage.getItem("monthEvents");
+      if (monthEvents)
+         this.setState({monthEvents: JSON.parse(monthEvents)});
   }
 
   previous() {
@@ -128,6 +138,8 @@ class Calendar extends React.Component {
     let newEvents = [];
 
     var eventTitle = prompt("Please enter a name for your event: ");
+    var eventH = prompt("H: ");
+    var eventM = prompt("M: ");
 
     switch (eventTitle) {
       case "":
@@ -139,7 +151,7 @@ class Calendar extends React.Component {
       default:
         var newEvent = {
           title: eventTitle,
-          date: currentSelectedDate,
+          date: currentSelectedDate.add(eventH, "h").add(eventM, "m"),
           dynamic: true
         };
 
@@ -152,6 +164,7 @@ class Calendar extends React.Component {
         this.setState({
           selectedMonthEvents: monthEvents
         });
+        localStorage.setItem('monthEvents', JSON.stringify(monthEvents));
         break;
     }
   }
@@ -174,7 +187,6 @@ class Calendar extends React.Component {
     const monthEvents = this.state.selectedMonthEvents.slice();
     const currentSelectedDate = this.state.selectedDay;
 
-    if (confirm("Are you sure you want to remove this event?")) {
       let index = i;
 
       if (index != -1) {
@@ -186,94 +198,7 @@ class Calendar extends React.Component {
       this.setState({
         selectedMonthEvents: monthEvents
       });
-    }
-  }
 
-  initialiseEvents() {
-    const monthEvents = this.state.selectedMonthEvents;
-
-    let allEvents = [];
-
-    var event1 = {
-      title:
-        "Press the Add button and enter a name for your event. P.S you can delete me by pressing me!",
-      date: moment(),
-      dynamic: false
-    };
-
-    var event2 = {
-      title: "Event 2 - Meeting",
-      date: moment().startOf("day").subtract(2, "d").add(2, "h"),
-      dynamic: false
-    };
-
-    var event3 = {
-      title: "Event 3 - Cinema",
-      date: moment().startOf("day").subtract(7, "d").add(18, "h"),
-      dynamic: false
-    };
-
-    var event4 = {
-      title: "Event 4 - Theater",
-      date: moment().startOf("day").subtract(16, "d").add(20, "h"),
-      dynamic: false
-    };
-
-    var event5 = {
-      title: "Event 5 - Drinks",
-      date: moment().startOf("day").subtract(2, "d").add(12, "h"),
-      dynamic: false
-    };
-
-    var event6 = {
-      title: "Event 6 - Diving",
-      date: moment().startOf("day").subtract(2, "d").add(13, "h"),
-      dynamic: false
-    };
-
-    var event7 = {
-      title: "Event 7 - Tennis",
-      date: moment().startOf("day").subtract(2, "d").add(14, "h"),
-      dynamic: false
-    };
-
-    var event8 = {
-      title: "Event 8 - Swimmming",
-      date: moment().startOf("day").subtract(2, "d").add(17, "h"),
-      dynamic: false
-    };
-
-    var event9 = {
-      title: "Event 9 - Chilling",
-      date: moment().startOf("day").subtract(2, "d").add(16, "h"),
-      dynamic: false
-    };
-
-        var event10 = {
-      title:
-        "Hello World",
-      date: moment().startOf("day").add(5, "h"),
-      dynamic: false
-    };
-
-    allEvents.push(event1);
-    allEvents.push(event2);
-    allEvents.push(event3);
-    allEvents.push(event4);
-    allEvents.push(event5);
-    allEvents.push(event6);
-    allEvents.push(event7);
-    allEvents.push(event8);
-    allEvents.push(event9);
-    allEvents.push(event10);
-
-    for (var i = 0; i < allEvents.length; i++) {
-      monthEvents.push(allEvents[i]);
-    }
-
-    this.setState({
-      selectedMonthEvents: monthEvents
-    });
   }
 
   render() {
@@ -462,10 +387,37 @@ class Day extends React.Component {
           (day.hasEvents ? " has-events" : "")
         }
         onClick={() => select(day)}
-      >
+      ><Dialogbox />
         <div className="day-number">{day.number}</div>
       </div>
     );
+  }
+}
+
+class Dialogbox extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      isShowingModal: true
+    }
+  }
+
+  handleClick = () => this.setState({isShowingModal: true})
+  handleClose = () => this.setState({isShowingModal: false})
+
+  render() {
+    return <div onClick={this.handleClick}>
+      {
+        this.state.isShowingModal &&
+        <ModalContainer onClose={this.handleClose}>
+          <ModalDialog onClose={this.handleClose}>
+            <h1>Dialog Content</h1>
+            <p>More Content. Anything goes here</p>
+            <button onClick(=> this.setState({isShowingModal: false}))>press me</button>
+          </ModalDialog>
+        </ModalContainer>
+      }
+    </div>;
   }
 }
 
