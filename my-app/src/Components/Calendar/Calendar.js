@@ -4,22 +4,13 @@ import confirm from 'confirm';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import './Calendar.css'
 
-class Addlecturer extends React.Component{
-  render(){
-    return(
-      <div class="add-module">
-        <form>
-          <input></input>
-        </form>
-      </div>
-    )
-  }
-}
-
 class Calendar extends React.Component {
   constructor(props){
     super(props);
-    this.state = {size: 12}
+    this.state = {
+      size: 12,
+      lectures: [{name: "matte", code: "ma0001", start: 8, end: 10}]
+    }
   }
 
   render(){
@@ -37,6 +28,10 @@ class Calendar extends React.Component {
       }
       rows.push(<tr key={i} id={rowID}>{cell}</tr>)
     }
+    for (var lecture in this.state.lectures){
+      console.log(lecture.name);
+    }
+
     return(
       <div>
         <table>
@@ -52,7 +47,6 @@ class Calendar extends React.Component {
             {rows}
           </tbody>
         </table>
-        <Addlecturer />
       </div>
     )
   }
