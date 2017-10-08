@@ -1,41 +1,92 @@
 
-form {
-  width: 50%;
-  margin: 2vh auto 2vh;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #A9A9A9;
-  font-family: 'Nunito', sans-serif;
+.newNote {
+	display: flex;
+	flex-flow: column;
+	border-radius: 5px;
+	margin: 5px;
+	background-color: rgba(32, 32, 128, 0.5);
+}
+.newNoteHead {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 5px 5px 0px 5px;
+	border-radius: 5px;
+} .newNoteHead input {
+	font-size: 18px;
+	padding-left: 20px;
+	border: 0;
+	border-radius: 5px;
+	margin: 5px 5px;
+	flex: 2;
+} .newNoteHead span {
+	flex: 1;
+} .newBody {
+	padding: 5px;
+	display: flex;
+} .newBody textarea {
+	font-size: 18px;
+	padding: 5px;
+	border: 0;
+	border-radius: 5px;
+	margin: 5px 5px;
+	flex: 1;
 }
 
-form textarea {
-  width: 100%;
-  overflow: auto;
-  border-radius: 5px;
-  outline: 0 none;
-	resize: none;
+.btn {
+	padding: 10px;
+	margin: 5px 5px;
+  background: #DDD;
+  color: #555;
+	margin-left: 5px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+	border-radius: 5px;
+} .btn:hover {
+  background: #EEE;
 }
 
+/* CSS for individual post-its */
 .note {
   display: inline-block;
-  background-color: transparent;
+	width: 300px;
   padding: 5px;
-  font-family: 'Nunito', sans-serif;
 }
 .note .inner {
   background-color: #FFF6A7;
   padding: 5px;
   border-radius: 5px;
-  height: 230px;
+  height: 250px;
   color: #8F754F;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
 }
 .note .title {
+	position: relative;
   background-color: #FFF275;
   padding: 1px;
   height: 45px;
+	overflow: hidden;
 }
 .note .title h2 {
   display: inline-block;
+	white-space: nowrap;
+} .note .title .btnz {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.noteBtn {
+	width: 20px;
+	padding: 5px;
+	float: left;
+  background: #DDD;
+  color: #555;
+	margin-left: 5px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+	border-radius: 5px;
+} .noteBtn:hover {
+  background: #EEE;
 }
