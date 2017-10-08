@@ -52,22 +52,16 @@ class Notat extends Component {
       active: !this.state.active,
     });
   }
+
   render() {
     let notes = this.state.notes.map((obj, i) =>
               <Note key={i} index={i} title={obj.title} text={obj.text} onUpdate={this.updateNote} onRemove={this.removeNote} />
               );
       return (
-        <div className="container-fluid">
-              <h1>Notes</h1>
-
-               <button type="button" className="btn btnPlus" data-toggle="collapse" data-target="#form">+</button>
-
-               <Form onSend={this.newNote}/>
-
                <div className="container-fluid">
+							 <Form onSend={this.newNote}/>
                    {this.state.notes.length > 0 ? notes : ""}
                </div>
-           </div>
       );
   }
 }
@@ -106,8 +100,8 @@ class Note extends React.Component {
       return (<div className="inner">
                 <div className="title">
                      <span>Edit</span>
-                     <button type="button" className="btn del" onClick={this.delete}><i className="fa fa-trash"></i></button>
-                     <button type="button" className="btn save" onClick={this.edit}><i className="fa fa-floppy-o"></i></button>
+                     <button type="button" className="btn del" onClick={this.delete}><i className="fa"></i></button>
+                     <button type="button" className="btn save" onClick={this.edit}><i className="fa"></i></button>
                 </div>
 
                 <div className="form-group">
@@ -132,7 +126,7 @@ class Note extends React.Component {
     }
   }
   render() { //xs for phone, sm for tablet, md for desktop
-    return ( <div className="note col-xs-10 col-sm-6 col-md-4">
+    return ( <div className="note">
                 {this.renderNoteOrEdit()}
              </div>
     )
@@ -171,9 +165,10 @@ class Form extends React.Component {
   render() {
     return ( <form className="collapse" id="form">
                   <div className="form-group">
-                     <label htmlFor="exampleInputEmail1">Title</label>
                      <input type="text" value={this.state.title} onChange={this.changeTitle}
-                            className="form-control" placeholder="Enter title" />
+                            className="form-control" placeholder="Enter new title" />
+														<button onClick={this.handleSubmit} className="btn">Save</button>
+														<button onClick={this.handleClear} className="btn">Clear</button>
                   </div>
 
                   <div className="form-group">
@@ -181,8 +176,6 @@ class Form extends React.Component {
                                 placeholder="Enter message" className="form-control" rows="4"/>
                   </div>
 
-                  <button onClick={this.handleSubmit} className="btn">Save</button>
-                  <button onClick={this.handleClear} className="btn">Clear</button>
               </form>  )
   }
 }
