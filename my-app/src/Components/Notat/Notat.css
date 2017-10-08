@@ -52,6 +52,9 @@
   display: inline-block;
 	width: 300px;
   padding: 5px;
+	text-align: left;
+} .note p {
+	text-align: left;
 }
 .note .inner {
   background-color: #FFF6A7;
@@ -67,8 +70,7 @@
   padding: 1px;
   height: 45px;
 	overflow: hidden;
-}
-.note .title h2 {
+} .note .title h2 {
   display: inline-block;
 	white-space: nowrap;
 } .note .title .btnz {
