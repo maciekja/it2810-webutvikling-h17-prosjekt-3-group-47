@@ -1,1 +1,328 @@
+/* common css start */
 
+body {
+  background-color: #efeff5;
+}
+
+
+.title{
+	width: 75vw;
+	float: left;
+}
+
+
+/* common css stop */
+
+/* Header css start */
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 14vh;
+  background-color: #213F4E;
+}
+
+#logoIMG{
+  float:left;
+  height: 60px;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.navigation{
+  padding-right: 100px;
+}
+
+.IMG{
+  height: 60px;
+  margin: 10px 20px 0px 20px;
+}
+
+.button {
+    background-color: Transparent;
+    transition: all .2s ease-in-out;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    float:right;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: white !important;
+    box-sizing: none;
+    padding: 2px 6px 3px;
+    border-style: none;
+    border-image: none;
+    text-rendering: none;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    margin: 0em;
+    font: 12px system-ui;
+    font-weight: bold;
+    outline: 0;
+}
+
+.button:hover{
+  border-color: black;
+  color: grey;
+  transform: scale(1.2);
+}
+
+/* Header css stopp */
+
+/* sidebar css start */
+
+.sidebar{
+	float: right;
+	width: 25vw;
+	background-color: #213F4E;
+	height: 86vh;
+}
+
+.sidebar h2{
+	color: white;
+	text-align: left;
+	padding: 20px;
+}
+
+.btnSidebar {
+	padding: 10px;
+  margin: 24px;
+  margin-left: 20px;
+  background: #29EE65;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+	border-radius: 5px;
+	height: 100%;
+  width: 72px;
+  display: inline-block;
+  border: 0px;
+}
+
+.btnSidebar:hover {
+  background: #2D7C1A;
+}
+
+input {
+	width: 90%;
+	font-size: 18px;
+	border: 0;
+	border-radius: 5px;
+	margin-left: 20px;
+	display: block;
+}
+
+textarea {
+	width: 90%;
+	display: block;
+	font-size: 18px;
+	border: 0;
+	margin-left: 20px;
+	border-radius: 5px;
+	resize: none;
+}
+
+/* stopwatch css start */
+
+.stopwatch { text-align: center }
+.stopwatch-timer {
+  font-size: 76px;
+  font-weight: 100;
+  line-height: 160px;
+
+  margin: 0;
+
+  border: solid #cecfd0;
+  border-width: 1px 0;
+  background-color: white;
+}
+
+.stopwatch-laps {
+  padding: 0 0 0 20px;
+  list-style-type: none;
+}
+
+.stopwatch-lap {
+  font-size: 20px;
+  line-height: 60px;
+  padding-right: 20px;
+  text-align: right;
+  border-bottom: 1px solid #d9dae0;
+}
+
+.stopwatch-lap strong {
+  float: left;
+  color: #7f8083;
+  font-weight: 100;
+}
+
+.stopwatch-lap strong::before { content: 'Lap ' }
+
+.sbtn {
+  font-family: inherit;
+  font-size: 20px;
+
+  display: inline-block;
+
+  width: 72px;
+  height: 72px;
+  margin: 24px;
+  padding: 0;
+
+  cursor: pointer;
+  letter-spacing: 1px;
+
+  border: 0;
+  border-radius: 50%;
+  outline: none;
+  background: white;
+}
+
+
+.start-sbtn { color: #4bd761 }
+.stop-sbtn  { color: #fd3d2a }
+
+/* stopwatch css stop */
+
+/* Notes css start */
+
+.note {
+  display: inline-block;
+	width: 300px;
+  padding: 5px;
+	text-align: left;
+}
+
+.note p {
+	text-align: left;
+}
+
+.note .inner {
+  background-color: #FFF6A7;
+  padding: 5px;
+  border-radius: 5px;
+  height: 250px;
+  color: #8F754F;
+  overflow: hidden;
+}
+
+.note .titleNote {
+	position: relative;
+  background-color: #FFF275;
+  padding: 1px;
+  height: 45px;
+	overflow: hidden;
+}
+
+.note .titleNote h2 {
+  display: inline-block;
+	white-space: nowrap;
+	float: left;
+}
+
+.note .titleNote .btnz {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+
+.noteBtn {
+	width: 20px;
+	padding: 5px;
+	float: left;
+  background: #DDD;
+  color: #555;
+	margin-left: 5px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+	border-radius: 5px;
+}
+
+.noteBtn:hover {
+  background: #EEE;
+}
+
+.note .titleNote .btnz {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+
+/* Notes css stop */
+
+/* To do css start */
+
+.todoitem {
+	user-select: none;
+	cursor: pointer;
+	position: relative;
+	white-space: nowrap;
+	text-overflow: hidden;
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+.todos div:nth-child(even) .done {
+	background: rgba(16, 64, 16, 0.4);
+}
+
+.todos div:nth-child(even) .not-done {
+	background-color: rgba(16, 16, 16, 0.35);
+}
+
+.not-done {
+	padding: 2px 20px;
+	background-color: rgba(16, 16, 16, 0.3);
+}
+
+.done {
+	text-decoration: line-through;
+	padding: 2px 20px;
+	background: rgba(16, 64, 16, 0.3);
+}
+
+.close {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	right: 0;
+	top: 0;
+	background: rgba(256, 128, 128, 0.4);
+	text-align: center;
+}
+
+/* To do css stop */
+
+/* Reminders css start */
+.pastDate {
+	padding: 2px 20px;
+	background-color: rgba(16, 16, 16, 0.3);
+}
+
+.not-pastDate {
+	text-decoration: line-through;
+	padding: 2px 20px;
+	background: rgba(16, 64, 16, 0.3);
+}
+
+.close {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	right: 0;
+	top: 0;
+	background: rgba(256, 128, 128, 0.4);
+	text-align: center;
+}
+/* Reminders css stop */

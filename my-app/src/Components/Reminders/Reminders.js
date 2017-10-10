@@ -57,10 +57,15 @@ class Reminders extends React.Component {
       <ReminderItem key={i} index={i} deadline={obj.deadline} title={obj.title} completed={obj.completed} onUpdate={this.updateReminders} onRemove={this.removeReminders} />
     );
     return (
-      <div className="content">
-			  <ReminderHandler onSend={this.newReminders}/>
-        <div className="container-fluid">
-          {this.state.rnotes.length > 0 ? rnotes : ""}
+      <div>
+        <div className="title">
+          <h1>Reminder</h1>
+        </div>
+        <div className="content">
+          <ReminderHandler onSend={this.newReminders}/>
+          <div className="container-fluid">
+            {this.state.notes.length > 0 ? notes : ""}
+          </div>
         </div>
       </div>
     )

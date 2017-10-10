@@ -65,11 +65,11 @@ class Notat extends Component {
               );
       return (
 	       <div className="notes">
+           <div className="title"><h1>Notes</h1></div>
 				 <Form onSend={this.newNote}/>
 	           {this.state.notes.length > 0 ? notes : ""}
 	       </div>
       );
   }
 }
-
 export default Notat;

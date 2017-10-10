@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css';
 import logo from './logo.png'
 import remindMe from './remindMe.png'
 import notes from './notes.png'
