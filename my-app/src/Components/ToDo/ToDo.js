@@ -46,12 +46,13 @@ class ToDo extends React.Component {
                <ToDoItem key={i} index={i} title={obj.title} done={obj.done} onUpdate={this.updateToDo} onRemove={this.removeToDo} />
                );
 
-    return (	<div className="content">
-								<Head onSend={this.newToDo}/>
-              	<div className="todos">
-                  {this.state.todos.length > 0 ? todos : ""}
-              	</div>
-          		</div>
+    return (
+			<div className="content">
+				<Head onSend={this.newToDo}/>
+      	<div className="todos">
+          {this.state.todos.length > 0 ? todos : ""}
+      	</div>
+  		</div>
     )
   }
 }
@@ -84,16 +85,17 @@ class Head extends React.Component {
 
 
   render() {
-    return (		<div className="head">
-	              	<div className="head-left">
-										<span>ToDo list:</span>
-									</div>
-	               	<div className="head-right">
-										<input type="text" value={this.state.title} onChange={this.changeTitle}
-	                            className="head-input" placeholder="Enter title" />
-										<span onClick={this.handleSubmit} className="save">Save</span>
-									</div>
-              	</div>	)
+    return (
+			<div className="head">
+      	<div className="head-left">
+					<span>ToDo list:</span>
+				</div>
+       	<div className="head-right">
+					<input type="text" value={this.state.title} onChange={this.changeTitle}
+                    className="head-input" placeholder="Enter title" />
+					<span onClick={this.handleSubmit} className="save">Save</span>
+				</div>
+    	</div>	)
   }
 }
 
