@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./reminder.css";
+
 class ReminderItem extends React.Component {
   constructor(props) {
     super(props);
@@ -13,7 +15,7 @@ class ReminderItem extends React.Component {
   }
 
   change() {
-		this.props.onUpdate(this.props.index,  this.state.pastDate);
+		this.props.onUpdate(this.props.index, this.state.pastDate);
     this.setState({pastDate: !this.state.pastDate});
   }
 
@@ -34,24 +36,27 @@ class ReminderItem extends React.Component {
   }
 
   renderDoneOrNot() {
-    if(this.props.pastDate) {
-      return (<div className="todoitem pastDate">
-                <div className="title" onClick={this.change}>
-                  {this.props.deadline.toString()}
-									{this.props.title}
-                  <span className="close" onClick={this.delete}>&times;</span>
-                </div>
-
-             </div>)
+    let date = this.props.deadline.toString().slice(0, 10);
+    if(this.state.pastDate) {
+      return (
+        <div className="todoitem not-pastDate">
+          <div className="title" onClick={this.change}>
+            {date}<br />
+						{this.props.title}
+            <span className="close" onClick={this.delete}>&times;</span>
+          </div>
+        </div>
+      );
     } else {
-       return (<div className="todoitem not-pastDate">
-                 <div className="title" onClick={this.change}>
-                     {this.props.deadline.toString()}
-                     {this.props.title}
-                     <span className="close" onClick={this.delete}>&times;</span>
-                 </div>
-
-               </div>)
+       return (
+         <div className="todoitem pastDate">
+           <div className="title" onClick={this.change}>
+             {date}<br />
+             {this.props.title}
+             <span className="close" onClick={this.delete}>&times;</span>
+           </div>
+         </div>
+      );
     }
   }
   render() { //xs for phone, sm for tablet, md for desktop
