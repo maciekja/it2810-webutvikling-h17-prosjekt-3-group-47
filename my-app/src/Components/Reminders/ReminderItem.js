@@ -1,6 +1,5 @@
 import React from "react";
 
-import "./reminder.css";
 
 class ReminderItem extends React.Component {
   constructor(props) {

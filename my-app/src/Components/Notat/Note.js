@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Notat.css';
 
 /*
 Manages edit or delete to notes
