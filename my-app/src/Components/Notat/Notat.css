@@ -92,3 +92,22 @@
 } .noteBtn:hover {
   background: #EEE;
 }
+
+.editInput {
+	font-size: 16px;
+	padding-left: 5px;
+	border: 0;
+	border-radius: 5px;
+	margin: 5px 5px;
+	width: 210px;
+}
+.editTextarea {
+	font-size: 16px;
+	padding-left: 5px;
+	border: 0;
+	border-radius: 5px;
+	margin: 5px 0px 0px 0px;
+	width: 280px;
+	resize: none;
+	height: 190px;
+}

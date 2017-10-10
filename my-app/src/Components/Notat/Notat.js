@@ -11,7 +11,7 @@ class Notat extends Component {
 
     this.state = {
       notes:[],
-      active: false,
+      active: true,
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -99,6 +99,7 @@ class Note extends React.Component {
     if(this.state.editing) {
       return (<div className="inner">
                 <div className="title">
+								<input type="text" className="editInput" value={this.state.title} onChange={this.changeTitle}  />
 									<div className="btnz">
 										<span className="noteBtn" onClick={this.edit}>&#10003;</span>
 	                	<span className="noteBtn" onClick={this.delete}>&#10060;</span>
@@ -106,8 +107,8 @@ class Note extends React.Component {
                 </div>
 
                 <div className="">
-									<input type="text" value={this.state.title} onChange={this.changeTitle}  />
-                  <textarea  value={this.state.text} onChange={this.changeText}/>
+
+                  <textarea className="editTextarea" value={this.state.text} onChange={this.changeText}/>
                 </div>
 
              </div>)
