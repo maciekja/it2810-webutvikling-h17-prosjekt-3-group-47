@@ -1,0 +1,8 @@
+.menu {
+  background-color: gray;
+  height: 93vh;
+  width: 20%;
+  min-width: 200px;
+  float: left;
+  overflow-y: hidden;
+}
