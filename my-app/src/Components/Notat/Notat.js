@@ -157,8 +157,11 @@ class Form extends React.Component {
   }
 
   handleSubmit(e) {
-    this.props.onSend(this.state.title, this.state.text);
-    this.handleClear(e);
+    if(this.state.title != '' || this.state.text != '') {
+			this.props.onSend(this.state.title, this.state.text);
+    	this.handleClear(e);
+			e.preventDefault();
+		}
   }
 
   handleClear(e) {
