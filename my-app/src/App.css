@@ -226,7 +226,6 @@ textarea {
 .note .titleNote h2 {
   display: inline-block;
 	white-space: nowrap;
-	float: left;
 }
 
 .note .titleNote .btnz {
@@ -273,15 +272,23 @@ textarea {
   margin: 10px 0px 10px 0px;
 }
 
+.check {
+  float: left;
+  height: 20px;
+}
+
 .not-done {
 	padding: 2px 20px;
 	background-color: white;
 }
 
 .done {
-	text-decoration: line-through;
 	padding: 2px 20px;
 	background-color: #29EE65;
+}
+
+.titleToDo {
+  margin-left: 30px;
 }
 
 .close {
