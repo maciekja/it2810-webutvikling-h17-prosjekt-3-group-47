@@ -1,4 +1,3 @@
-
 .newNote {
 	display: flex;
 	flex-flow: column;
@@ -6,24 +5,36 @@
 	margin: 5px;
 	background-color: rgba(32, 32, 128, 0.5);
 }
+
 .newNoteHead {
 	display: flex;
 	flex-wrap: wrap;
 	padding: 5px 5px 0px 5px;
 	border-radius: 5px;
-} .newNoteHead input {
+	height: 73px !important;
+}
+
+.newNoteHead input {
 	font-size: 18px;
 	padding-left: 10px;
 	border: 0;
 	border-radius: 5px;
 	margin: 5px 5px;
 	flex: 2;
-} .newNoteHead span {
+	height: 58px;
+}
+
+.newNoteHead span {
 	flex: 1;
-} .newBody {
+	height: 38px;
+}
+
+.newBody {
 	padding: 5px;
 	display: flex;
-} .newBody textarea {
+}
+
+.newBody textarea {
 	font-size: 18px;
 	padding: 5px;
 	border: 0;
@@ -43,7 +54,9 @@
   cursor: pointer;
   transition: 0.3s;
 	border-radius: 5px;
-} .btn:hover {
+}
+
+.btn:hover {
   background: #EEE;
 }
 
@@ -53,9 +66,12 @@
 	width: 300px;
   padding: 5px;
 	text-align: left;
-} .note p {
+}
+
+.note p {
 	text-align: left;
 }
+
 .note .inner {
   background-color: #FFF6A7;
   padding: 5px;
@@ -64,21 +80,39 @@
   color: #8F754F;
   overflow: hidden;
 }
+
 .note .title {
 	position: relative;
   background-color: #FFF275;
   padding: 1px;
   height: 45px;
 	overflow: hidden;
-} .note .title h2 {
+}
+
+.note .title h2 {
   display: inline-block;
 	white-space: nowrap;
-} .note .title .btnz {
+}
+
+.note .title .btnz {
 	position: absolute;
 	right: 5px;
 	top: 5px;
 }
+
 .noteBtn {
+	width: 20px;
+	padding: 5px;
+  background: #DDD;
+  color: #555;
+	margin-left: 5px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+	border-radius: 5px;
+}
+
+.noteBtnEdit {
 	width: 20px;
 	padding: 5px;
 	float: left;
@@ -89,7 +123,9 @@
   font-size: 16px;
   cursor: pointer;
 	border-radius: 5px;
-} .noteBtn:hover {
+}
+
+.noteBtn:hover {
   background: #EEE;
 }
 
@@ -102,6 +138,7 @@
 	width: 230px;
 	height: 28px;
 }
+
 .editTextarea {
 	font-size: 16px;
 	padding-left: 5px;
