@@ -59,6 +59,7 @@ class Notat extends Component {
               );
       return (
 	       <div className="notes">
+           <div className="title"><h1>Notes</h1></div>
 				 <Form onSend={this.newNote}/>
 	           {this.state.notes.length > 0 ? notes : ""}
 	       </div>
@@ -171,24 +172,18 @@ class Form extends React.Component {
 
   render() {
     return (
-			<form className="newNote" id="form">
-				<div className="newNoteHead">
-					<div className="head-left">
-						<span>Post-it-notes:</span>
-					</div>
-					<div className="head-right">
-	        	<input type="text" className="input" value={this.state.title}
-						onChange={this.changeTitle} placeholder="Enter new title" />
-						<span onClick={this.handleSubmit} className="btn">Save</span>
-						<span onClick={this.handleClear} className="btn">Clear</span>
-					</div>
-				</div>
-				<div className="newBody">
-					<textarea value={this.state.text} onChange={this.changeText}
-					placeholder="Enter message" rows="4"/>
-				</div>
-
-	    </form>  )
+      <div className="sidebar">
+        <form className="newNote" id="form">
+        <h2>Tittel</h2>
+        <input type="text" className="input" value={this.state.title}
+        onChange={this.changeTitle} placeholder="Enter new title" />
+        <h2>Content</h2>
+        <textarea className="textArea" value={this.state.text} onChange={this.changeText}
+        placeholder="Enter message" rows="4"/>
+        <span onClick={this.handleSubmit} className="btn">Save</span>
+        </form>
+      </div>
+    )
   }
 }
 

@@ -1,50 +1,76 @@
+.sidebar{
+	float: right;
+	width: 25vw;
+	background-color: #213F4E;
+	height: 86vh;
+}
+
+.sidebar h2{
+	color: white;
+	text-align: left;
+	padding: 20px;
+}
+
+.title{
+	width: 75vw;
+	float: left;
+}
+
+textarea {
+	width: 90%;
+	display: block;
+	font-size: 18px;
+	border: 0;
+	margin-left: 20px;
+	border-radius: 5px;
+	resize: none;
+}
+
+input {
+	width: 90%;
+	font-size: 18px;
+	border: 0;
+	border-radius: 5px;
+	margin-left: 20px;
+	display: block;
+}
 
 .newNote {
 	display: flex;
 	flex-flow: column;
 	border-radius: 5px;
-	margin: 5px;
-	background-color: rgba(32, 32, 128, 0.5);
 }
 .newNoteHead {
 	display: flex;
 	flex-wrap: wrap;
 	padding: 5px 5px 0px 5px;
 	border-radius: 5px;
-} .newNoteHead input {
-	font-size: 18px;
-	padding-left: 10px;
-	border: 0;
-	border-radius: 5px;
-	margin: 5px 5px;
-	flex: 2;
-} .newNoteHead span {
+}
+
+.newNoteHead span {
 	flex: 1;
-} .newBody {
+}
+
+.newBody {
 	padding: 5px;
 	display: flex;
-} .newBody textarea {
-	font-size: 18px;
-	padding: 5px;
-	border: 0;
-	border-radius: 5px;
-	margin: 5px 5px;
-	flex: 1;
 }
 
 .btn {
 	padding: 10px;
-	margin: 5px 5px;
-  background: #DDD;
-  color: #555;
-	margin-left: 5px;
+	margin-left: 20px;
+  background: #29EE65;
+  color: white;
   text-align: center;
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
 	border-radius: 5px;
-} .btn:hover {
-  background: #EEE;
+	height: 100%;
+}
+
+.btn:hover {
+  background: #2D7C1A;
 }
 
 /* CSS for individual post-its */
@@ -53,9 +79,12 @@
 	width: 300px;
   padding: 5px;
 	text-align: left;
-} .note p {
+}
+
+.note p {
 	text-align: left;
 }
+
 .note .inner {
   background-color: #FFF6A7;
   padding: 5px;
@@ -64,20 +93,27 @@
   color: #8F754F;
   overflow: hidden;
 }
+
 .note .title {
 	position: relative;
   background-color: #FFF275;
   padding: 1px;
   height: 45px;
 	overflow: hidden;
-} .note .title h2 {
+}
+
+.note .title h2 {
   display: inline-block;
 	white-space: nowrap;
-} .note .title .btnz {
+	float: left;
+}
+
+.note .title .btnz {
 	position: absolute;
 	right: 5px;
 	top: 5px;
 }
+
 .noteBtn {
 	width: 20px;
 	padding: 5px;
@@ -89,7 +125,9 @@
   font-size: 16px;
   cursor: pointer;
 	border-radius: 5px;
-} .noteBtn:hover {
+}
+
+.noteBtn:hover {
   background: #EEE;
 }
 
@@ -102,6 +140,7 @@
 	width: 230px;
 	height: 28px;
 }
+
 .editTextarea {
 	font-size: 16px;
 	padding-left: 5px;

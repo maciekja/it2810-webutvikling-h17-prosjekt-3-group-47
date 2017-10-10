@@ -48,6 +48,7 @@ class ToDo extends React.Component {
 
     return (
 			<div className="content">
+        <div className="title"><h1>To do</h1></div>
 				<Head onSend={this.newToDo}/>
       	<div className="todos">
           {this.state.todos.length > 0 ? todos : ""}
@@ -86,16 +87,15 @@ class Head extends React.Component {
 
   render() {
     return (
-			<div className="head">
-      	<div className="head-left">
-					<span>ToDo list:</span>
-				</div>
-       	<div className="head-right">
-					<input type="text" value={this.state.title} onChange={this.changeTitle}
-                    className="head-input" placeholder="Enter title" />
-					<span onClick={this.handleSubmit} className="save">Save</span>
-				</div>
-    	</div>	)
+      <div className="sidebar">
+        <form>
+          <h2>Name:</h2>
+          <input type="text" value={this.state.title} onChange={this.changeTitle}
+          className="head-input" placeholder="Enter title" />
+          <span onClick={this.handleSubmit} className="btn">Save</span>
+        </form>
+      </div>
+    );
   }
 }
 
@@ -129,26 +129,31 @@ class ToDoItem extends React.Component {
 
   renderDoneOrNot() {
     if(this.props.done) {
-      return (<div className="todoitem done">
-                <div className="title" onClick={this.change}>
-									{this.props.title}
-                </div>
-								<span className="close" onClick={this.delete}>&times;</span>
-             </div>)
+      return (
+        <div className="todoitem done">
+          <div className="title" onClick={this.change}>
+            {this.props.title}
+          </div>
+          <span className="close" onClick={this.delete}>&times;</span>
+        </div>
+      );
     } else {
-       return (<div className="todoitem not-done">
-                 <div className="title" onClick={this.change}>
-                     {this.props.title}
-                 </div>
-								 <span className="close" onClick={this.delete}>&times;</span>
-               </div>)
+       return (
+         <div className="todoitem not-done">
+           <div className="title" onClick={this.change}>
+             {this.props.title}
+           </div>
+           <span className="close" onClick={this.delete}>&times;</span>
+         </div>
+       );
     }
   }
   render() { //xs for phone, sm for tablet, md for desktop
-    return ( <div className="ToDoItem col-xs-10 col-sm-6 col-md-4">
-                {this.renderDoneOrNot()}
-             </div>
-    )
+    return (
+      <div className="ToDoItem col-xs-10 col-sm-6 col-md-4">
+        {this.renderDoneOrNot()}
+      </div>
+    );
   }
 }
 
