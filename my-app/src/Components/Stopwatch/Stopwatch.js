@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Stopwatch.css'
 
 const formattedSeconds = (sec) =>
   Math.floor(sec / 60) +
@@ -94,6 +93,6 @@ class Button extends React.Component {
 */
 
 const Button = (props) =>
-  <button type="button" {...props} className={"btn " + props.className } />;
+  <button type="button" {...props} className={"sbtn " + props.className } />;
 
 export default Stopwatch;

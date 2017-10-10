@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './ToDo.css';
 
 class ToDo extends React.Component {
    constructor(props) {
@@ -92,7 +91,7 @@ class Head extends React.Component {
           <h2>Name:</h2>
           <input type="text" value={this.state.title} onChange={this.changeTitle}
           className="head-input" placeholder="Enter title" />
-          <span onClick={this.handleSubmit} className="btn">Save</span>
+        <span onClick={this.handleSubmit} className="btnSidebar">Save</span>
         </form>
       </div>
     );

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Notat.css';
 
 class Notat extends Component {
   constructor(props) {
@@ -100,7 +99,7 @@ class Note extends React.Component {
     if(this.state.editing) {
       return (
 				<div className="inner">
-          <div className="title">
+          <div className="titleNote">
 					<input type="text" className="editInput" value={this.state.title} onChange={this.changeTitle}  />
 						<div className="btnz">
 							<span className="noteBtn" onClick={this.edit}>&#10003;</span>
@@ -116,7 +115,7 @@ class Note extends React.Component {
     } else {
        return (
 				<div className="inner">
-        	<div className="title">
+        	<div className="titleNote">
       		<h2>{this.props.title}</h2>
 					<div className="btnz">
 					 <span className="noteBtn" onClick={this.edit}>&#9998;</span>
@@ -174,13 +173,13 @@ class Form extends React.Component {
     return (
       <div className="sidebar">
         <form className="newNote" id="form">
-        <h2>Tittel</h2>
+        <h2>Title</h2>
         <input type="text" className="input" value={this.state.title}
         onChange={this.changeTitle} placeholder="Enter new title" />
         <h2>Content</h2>
         <textarea className="textArea" value={this.state.text} onChange={this.changeText}
         placeholder="Enter message" rows="4"/>
-        <span onClick={this.handleSubmit} className="btn">Save</span>
+      <span onClick={this.handleSubmit} className="btnSidebar">Add</span>
         </form>
       </div>
     )

@@ -43,15 +43,13 @@ class ReminderHandler extends React.Component {
 
   render() {
     return (
-      <div className="head">
-	       <div className="head-left">
-			      <span>Reminders:</span>
-			   </div>
-	       <div className="head-right">
-            <DatePicker dateFormat="DD/MM/YYYY" selected={this.state.deadline} onChange={this.handleChange} withPortal />
-			      <input type="text" value={this.state.reminders} onChange={this.changeTitle} className="head-input" placeholder="Enter a reminder" />
-            <button onClick={this.handleSubmit} className="save">Save</button>
-			   </div>
+      <div className="sidebar">
+        <h2>Reminders:</h2>
+        <div className="head-right">
+          <DatePicker dateFormat="DD/MM/YYYY" selected={this.state.deadline} onChange={this.handleChange} withPortal />
+          <input type="text" value={this.state.reminders} onChange={this.changeTitle} className="head-input" placeholder="Enter a reminder" />
+          <button onClick={this.handleSubmit} className="btnSidebar">Add</button>
+        </div>
       </div>
     );
   }

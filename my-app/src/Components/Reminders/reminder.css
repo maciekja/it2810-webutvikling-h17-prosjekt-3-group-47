@@ -59,10 +59,14 @@
 	margin-bottom: 1px;
 	border: 3px rgba(128, 128, 128, 0.3) solid;
 	border-radius: 5px;
-} .not-done {
+}
+
+.not-done {
 	padding: 2px 20px;
 	background-color: rgba(16, 16, 16, 0.3);
-} .done {
+}
+
+.done {
 	text-decoration: line-through;
 	padding: 2px 20px;
 	background: rgba(16, 64, 16, 0.3);

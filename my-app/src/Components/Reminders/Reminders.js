@@ -49,7 +49,9 @@ class Reminders extends React.Component {
     );
     return (
       <div>
-        <h1>Reminder</h1>
+        <div className="title">
+          <h1>Reminder</h1>
+        </div>
         <div className="content">
           <ReminderHandler onSend={this.newReminders}/>
           <div className="container-fluid">
