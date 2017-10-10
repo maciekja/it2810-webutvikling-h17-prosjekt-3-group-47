@@ -226,7 +226,6 @@ textarea {
 .note .titleNote h2 {
   display: inline-block;
 	white-space: nowrap;
-	float: left;
 }
 
 .note .titleNote .btnz {
@@ -270,25 +269,26 @@ textarea {
 	text-overflow: hidden;
 	overflow: hidden;
 	border-radius: 5px;
+  margin: 10px 0px 10px 0px;
 }
 
-.todos div:nth-child(even) .done {
-	background: rgba(16, 64, 16, 0.4);
-}
-
-.todos div:nth-child(even) .not-done {
-	background-color: rgba(16, 16, 16, 0.35);
+.check {
+  float: left;
+  height: 20px;
 }
 
 .not-done {
 	padding: 2px 20px;
-	background-color: rgba(16, 16, 16, 0.3);
+	background-color: white;
 }
 
 .done {
-	text-decoration: line-through;
 	padding: 2px 20px;
-	background: rgba(16, 64, 16, 0.3);
+	background-color: #29EE65;
+}
+
+.titleToDo {
+  margin-left: 30px;
 }
 
 .close {

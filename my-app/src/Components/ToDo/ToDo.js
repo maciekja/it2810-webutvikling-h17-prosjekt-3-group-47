@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import done from './done.png'
 
 class ToDo extends React.Component {
    constructor(props) {
@@ -130,7 +131,8 @@ class ToDoItem extends React.Component {
     if(this.props.done) {
       return (
         <div className="todoitem done">
-          <div className="title" onClick={this.change}>
+          <img className="check" src={done} />
+          <div className="titleToDo" onClick={this.change}>
             {this.props.title}
           </div>
           <span className="close" onClick={this.delete}>&times;</span>
@@ -139,7 +141,8 @@ class ToDoItem extends React.Component {
     } else {
        return (
          <div className="todoitem not-done">
-           <div className="title" onClick={this.change}>
+           <div className="check"></div>
+           <div className="titleToDo" onClick={this.change}>
              {this.props.title}
            </div>
            <span className="close" onClick={this.delete}>&times;</span>

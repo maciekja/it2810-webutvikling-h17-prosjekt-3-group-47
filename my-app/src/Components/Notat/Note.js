@@ -53,7 +53,7 @@ class Note extends React.Component {
     } else {
        return (
 				<div className="inner">
-        	<div className="title">
+        	<div className="titleNote">
       		<h2>{this.props.title}</h2>
 					<div className="btnz">
 					 <span className="noteBtn" onClick={this.edit}>&#9998;</span>
