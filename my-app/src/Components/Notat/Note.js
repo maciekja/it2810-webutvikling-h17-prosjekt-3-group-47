@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './Notat.css';
 
+/*
+Manages edit or delete to notes
+Manages changes to specific notes: update title and text, and clear and submit changes
+*/
 class Note extends React.Component {
   constructor(props) {
     super(props);

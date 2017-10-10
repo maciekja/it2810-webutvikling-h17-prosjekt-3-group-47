@@ -3,6 +3,10 @@ import './Notat.css';
 import Form from "./Form.js";
 import Note from "./Note.js";
 
+/*
+Loades notes from localstorage
+Manages classes: loading, saving, removing and updating notes
+*/
 class Notat extends Component {
   constructor(props) {
     super(props);

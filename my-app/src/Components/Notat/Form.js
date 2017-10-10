@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './Notat.css';
 
+/*
+Loades form to create new notes
+Set title and text to notes
+*/
 class Form extends React.Component {
   constructor(props) {
     super(props);
