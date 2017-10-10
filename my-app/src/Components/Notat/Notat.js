@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Notat.css';
 import Form from "./Form.js";
 import Note from "./Note.js";
 

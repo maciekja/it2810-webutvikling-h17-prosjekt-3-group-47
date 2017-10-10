@@ -64,7 +64,7 @@ class Reminders extends React.Component {
         <div className="content">
           <ReminderHandler onSend={this.newReminders}/>
           <div className="container-fluid">
-            {this.state.notes.length > 0 ? notes : ""}
+            {this.state.rnotes.length > 0 ? rnotes : ""}
           </div>
         </div>
       </div>

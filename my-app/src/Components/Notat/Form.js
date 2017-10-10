@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Notat.css';
 
 /*
 Loades form to create new notes
@@ -39,24 +38,16 @@ class Form extends React.Component {
 
   render() {
     return (
-			<form className="newNote" id="form">
-				<div className="newNoteHead">
-					<div className="head-left">
-						<span>Post-it-notes:</span>
-					</div>
-					<div className="head-right">
-	        	<input type="text" className="input" value={this.state.title}
-						onChange={this.changeTitle} placeholder="Enter new title" />
-						<span onClick={this.handleSubmit} className="btn">Save</span>
-						<span onClick={this.handleClear} className="btn">Clear</span>
-					</div>
-				</div>
-				<div className="newBody">
-					<textarea value={this.state.text} onChange={this.changeText}
-					placeholder="Enter message" rows="4"/>
-				</div>
-
-	    </form>  )
+      <div className="sidebar">
+        <form className="newNote" id="form">
+          <h2>Title</h2>
+          <input type="text" className="input" value={this.state.title} onChange={this.changeTitle} placeholder="Enter new title" />
+          <h2>Content</h2>
+          <textarea value={this.state.text} onChange={this.changeText} placeholder="Enter message" rows="4"/>
+          <span onClick={this.handleSubmit} className="btnSidebar">Save</span>
+  	    </form>
+      </div>
+    );
   }
 }
 

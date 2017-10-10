@@ -53,8 +53,9 @@ class ReminderHandler extends React.Component {
       <div className="sidebar">
         <h2>Reminders:</h2>
         <div className="head-right">
-          <DatePicker dateFormat="DD/MM/YYYY" selected={this.state.deadline} onChange={this.handleChange} withPortal />
           <input type="text" value={this.state.reminders} onChange={this.changeTitle} className="head-input" placeholder="Enter a reminder" />
+          <h2>Date:</h2>
+          <DatePicker dateFormat="DD/MM/YYYY" selected={this.state.deadline} onChange={this.handleChange} withPortal />
           <button onClick={this.handleSubmit} className="btnSidebar">Add</button>
         </div>
       </div>
