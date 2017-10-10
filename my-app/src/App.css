@@ -19,7 +19,7 @@ body {
   position: relative;
   width: 100%;
   height: 14vh;
-  background-color: #f6f6f6;
+  background-color: #213F4E;
 }
 
 #logoIMG{
@@ -305,5 +305,24 @@ textarea {
 /* To do css stop */
 
 /* Reminders css start */
+.pastDate {
+	padding: 2px 20px;
+	background-color: rgba(16, 16, 16, 0.3);
+}
 
+.not-pastDate {
+	text-decoration: line-through;
+	padding: 2px 20px;
+	background: rgba(16, 64, 16, 0.3);
+}
+
+.close {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	right: 0;
+	top: 0;
+	background: rgba(256, 128, 128, 0.4);
+	text-align: center;
+}
 /* Reminders css stop */
