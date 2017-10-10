@@ -13,27 +13,37 @@
 	border-radius: 5px;
 	margin-bottom: 5px;
 	background-color: rgba(32, 32, 64, 0.5);
-} .head-left {
+}
+
+.head-left {
 	text-align: center;
 	font-size: 24px;
 	flex: 1;
 	margin: 5px 0px;
 	display: flex;
-} .head-left * {
+}
+
+.head-left * {
 	flex: 1;
 	align-self: center;
-}.head-right {
+}
+
+.head-right {
 	flex: 2;
 	display: flex;
 	flex-wrap: wrap;
-} .head-input {
+}
+
+.head-input {
 	flex: 2;
 	font-size: 18px;
 	padding-left: 20px;
 	border: 0;
 	border-radius: 5px;
 	margin: 5px 5px;
-} .save {
+}
+
+.save {
 	padding: 10px;
 	margin: 5px 5px;
   background: #d9d9d9;
@@ -46,10 +56,9 @@
   cursor: pointer;
   transition: 0.3s;
 	border-radius: 5px;
-} .save:hover {
-
 }
-.ToDoItem {
+
+.ReminderItem {
 	user-select: none;
 	cursor: pointer;
 	position: relative;
@@ -59,10 +68,14 @@
 	margin-bottom: 1px;
 	border: 3px rgba(128, 128, 128, 0.3) solid;
 	border-radius: 5px;
-} .not-done {
+}
+
+.pastDate {
 	padding: 2px 20px;
 	background-color: rgba(16, 16, 16, 0.3);
-} .done {
+}
+
+.not-pastDate {
 	text-decoration: line-through;
 	padding: 2px 20px;
 	background: rgba(16, 64, 16, 0.3);
