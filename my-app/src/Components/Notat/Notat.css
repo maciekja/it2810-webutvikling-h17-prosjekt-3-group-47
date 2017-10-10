@@ -1,116 +1,114 @@
 
-.btn-plus {
-  width: 60px;
-  height: 60px;
+.newNote {
+	display: flex;
+	flex-flow: column;
+	border-radius: 5px;
+	margin: 5px;
+	background-color: rgba(32, 32, 128, 0.5);
+}
+.newNoteHead {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 5px 5px 0px 5px;
+	border-radius: 5px;
+} .newNoteHead input {
+	font-size: 18px;
+	padding-left: 10px;
+	border: 0;
+	border-radius: 5px;
+	margin: 5px 5px;
+	flex: 2;
+} .newNoteHead span {
+	flex: 1;
+} .newBody {
+	padding: 5px;
+	display: flex;
+} .newBody textarea {
+	font-size: 18px;
+	padding: 5px;
+	border: 0;
+	border-radius: 5px;
+	margin: 5px 5px;
+	flex: 1;
+}
+
+.btn {
+	padding: 10px;
+	margin: 5px 5px;
+  background: #DDD;
+  color: #555;
+	margin-left: 5px;
   text-align: center;
-  font-size: 3em;
-  line-height: 0.80;
-  display: block;
-  border-radius: 50%;
-  text-decoration: none;
-  color: #fff;
-  background-color: #000000;
-  border: none;
-}
-
-.btn-plus:hover {
-    color: #fff;
-    background-color: #a2a2a2;
-    border: none;
-}
-
-.btn-plus:active {
-    color: #fff;
-    background-color: #000000;
-    background-image: none;
-    border: none;
-}
-
-form {
-  width: 50%;
-  margin: 2vh auto 2vh;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #A9A9A9;
-  font-family: 'Nunito', sans-serif;
-}
-
-form textarea {
-  width: 100%;
-  overflow: auto;
-  border-radius: 5px;
-  outline: 0 none;
-}
-form button {
-  width: 75px;
-  height: 35px;
-  text-align: center;
-  color: #FFF;
-  background-color: #87CEEB;
-  border-radius: 2px;
-  margin-right: 10px;
-  text-decoration: none;
-  transition: background .15s ease-in, transform .25s ease-in-out;
-}
-@media screen and (max-width: 580px) {
-  form {
-    width: 95%;
-  }
-}
-
-/*button:active, button:hover, button:focus {
-  outline: 0;
+  font-size: 16px;
   cursor: pointer;
-  background: rgba(255, 142, 69, 0.5);
-  transform: scale(1.07);
-}*/
-
-textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
-  border-color: rgba(229, 103, 23, 0.8);
-  box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(229, 103, 23, 0.6);
-  outline: 0 none;
+  transition: 0.3s;
+	border-radius: 5px;
+} .btn:hover {
+  background: #EEE;
 }
 
+/* CSS for individual post-its */
 .note {
   display: inline-block;
-  background-color: transparent;
+	width: 300px;
   padding: 5px;
-  font-family: 'Nunito', sans-serif;
+	text-align: left;
+} .note p {
+	text-align: left;
 }
 .note .inner {
   background-color: #FFF6A7;
   padding: 5px;
   border-radius: 5px;
-  height: 230px;
+  height: 250px;
   color: #8F754F;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
 }
 .note .title {
+	position: relative;
   background-color: #FFF275;
   padding: 1px;
   height: 45px;
-}
-.note .title h2 {
+	overflow: hidden;
+} .note .title h2 {
   display: inline-block;
+	white-space: nowrap;
+} .note .title .btnz {
+	position: absolute;
+	right: 5px;
+	top: 5px;
 }
-.note .btn {
-  background-color: #58A33A;
-  color: #FFF;
-  margin: 1px 0px 1px 5px;
-  float: right;
+.noteBtn {
+	width: 20px;
+	padding: 5px;
+	float: left;
+  background: #DDD;
+  color: #555;
+	margin-left: 5px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+	border-radius: 5px;
+} .noteBtn:hover {
+  background: #EEE;
 }
-.note .del {
-  background-color: #DD4B1A;
+
+.editInput {
+	font-size: 16px;
+	padding-left: 5px;
+	border: 0;
+	border-radius: 5px;
+	margin: 5px 5px;
+	width: 230px;
+	height: 28px;
 }
-.note .save {
-  background-color: #E9A553;
-}
-.note input, .note textarea {
-  margin: 1px;
-  width: 100%;
-  border-radius: 5px;
-}
-.note span {
-  padding-left: 15px;
+.editTextarea {
+	font-size: 16px;
+	padding-left: 5px;
+	border: 0;
+	border-radius: 5px;
+	margin: 5px 0px 0px 0px;
+	width: 280px;
+	resize: none;
+	height: 190px;
 }

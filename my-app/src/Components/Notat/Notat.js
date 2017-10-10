@@ -11,7 +11,7 @@ class Notat extends Component {
 
     this.state = {
       notes:[],
-      active: false,
+      active: true,
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -52,22 +52,16 @@ class Notat extends Component {
       active: !this.state.active,
     });
   }
+
   render() {
     let notes = this.state.notes.map((obj, i) =>
               <Note key={i} index={i} title={obj.title} text={obj.text} onUpdate={this.updateNote} onRemove={this.removeNote} />
               );
       return (
-        <div className="container-fluid">
-              <h1>Notes</h1>
-
-               <button type="button" className="btn btnPlus" data-toggle="collapse" data-target="#form">+</button>
-
-               <Form onSend={this.newNote}/>
-
-               <div className="container-fluid">
-                   {this.state.notes.length > 0 ? notes : ""}
-               </div>
-           </div>
+	       <div className="notes">
+				 <Form onSend={this.newNote}/>
+	           {this.state.notes.length > 0 ? notes : ""}
+	       </div>
       );
   }
 }
@@ -103,38 +97,42 @@ class Note extends React.Component {
 
   renderNoteOrEdit() {
     if(this.state.editing) {
-      return (<div className="inner">
-                <div className="title">
-                     <span>Edit</span>
-                     <button type="button" className="btn del" onClick={this.delete}><i className="fa fa-trash"></i></button>
-                     <button type="button" className="btn save" onClick={this.edit}><i className="fa fa-floppy-o"></i></button>
-                </div>
+      return (
+				<div className="inner">
+          <div className="title">
+					<input type="text" className="editInput" value={this.state.title} onChange={this.changeTitle}  />
+						<div className="btnz">
+							<span className="noteBtn" onClick={this.edit}>&#10003;</span>
+						</div>
+          </div>
 
-                <div className="form-group">
-                    <input type="text" value={this.state.title} onChange={this.changeTitle} className="form-control" />
-                </div>
-                <div className="form-group">
-                    <textarea  name="text" value={this.state.text} onChange={this.changeText} className="form-control" rows="4"/>
-                </div>
+          <div className="">
 
-             </div>)
+            <textarea className="editTextarea" value={this.state.text} onChange={this.changeText}/>
+          </div>
+
+       </div>)
     } else {
-       return (<div className="inner">
-                 <div className="title">
-                     <h2>{this.props.title}</h2>
-                     <button type="button" className="btn del" onClick={this.delete}><i className="fa fa-trash"></i></button>
-                     <button type="button" className="btn" onClick={this.edit}><i className="fa fa-pencil"></i></button>
-                 </div>
-                 <div className="text">
-                   <p>{this.props.text}</p>
-                 </div>
-               </div>)
+       return (
+				<div className="inner">
+        	<div className="title">
+      		<h2>{this.props.title}</h2>
+					<div className="btnz">
+					 <span className="noteBtn" onClick={this.edit}>&#9998;</span>
+           <span className="noteBtn" onClick={this.delete}>&#10060;</span>
+					</div>
+				</div>
+  			<div className="">
+        	<p>{this.props.text}</p>
+      	</div>
+  		</div>)
     }
   }
-  render() { //xs for phone, sm for tablet, md for desktop
-    return ( <div className="note col-xs-10 col-sm-6 col-md-4">
-                {this.renderNoteOrEdit()}
-             </div>
+  render() {
+    return (
+			<div className="note">
+      	{this.renderNoteOrEdit()}
+      </div>
     )
   }
 }
@@ -159,8 +157,11 @@ class Form extends React.Component {
   }
 
   handleSubmit(e) {
-    this.props.onSend(this.state.title, this.state.text);
-    this.handleClear(e);
+    if(this.state.title != '' || this.state.text != '') {
+			this.props.onSend(this.state.title, this.state.text);
+    	this.handleClear(e);
+			e.preventDefault();
+		}
   }
 
   handleClear(e) {
@@ -169,21 +170,25 @@ class Form extends React.Component {
   }
 
   render() {
-    return ( <form className="collapse" id="form">
-                  <div className="form-group">
-                     <label htmlFor="exampleInputEmail1">Title</label>
-                     <input type="text" value={this.state.title} onChange={this.changeTitle}
-                            className="form-control" placeholder="Enter title" />
-                  </div>
+    return (
+			<form className="newNote" id="form">
+				<div className="newNoteHead">
+					<div className="head-left">
+						<span>Post-it-notes:</span>
+					</div>
+					<div className="head-right">
+	        	<input type="text" className="input" value={this.state.title}
+						onChange={this.changeTitle} placeholder="Enter new title" />
+						<span onClick={this.handleSubmit} className="btn">Save</span>
+						<span onClick={this.handleClear} className="btn">Clear</span>
+					</div>
+				</div>
+				<div className="newBody">
+					<textarea value={this.state.text} onChange={this.changeText}
+					placeholder="Enter message" rows="4"/>
+				</div>
 
-                  <div className="form-group">
-                     <textarea  name="text" value={this.state.text} onChange={this.changeText}
-                                placeholder="Enter message" className="form-control" rows="4"/>
-                  </div>
-
-                  <button onClick={this.handleSubmit} className="btn">Save</button>
-                  <button onClick={this.handleClear} className="btn">Clear</button>
-              </form>  )
+	    </form>  )
   }
 }
 
