@@ -1,0 +1,116 @@
+
+.btn-plus {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 3em;
+  line-height: 0.80;
+  display: block;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #fff;
+  background-color: #000000;
+  border: none;
+}
+
+.btn-plus:hover {
+    color: #fff;
+    background-color: #a2a2a2;
+    border: none;
+}
+
+.btn-plus:active {
+    color: #fff;
+    background-color: #000000;
+    background-image: none;
+    border: none;
+}
+
+form {
+  width: 50%;
+  margin: 2vh auto 2vh;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #A9A9A9;
+  font-family: 'Nunito', sans-serif;
+}
+
+form textarea {
+  width: 100%;
+  overflow: auto;
+  border-radius: 5px;
+  outline: 0 none;
+}
+form button {
+  width: 75px;
+  height: 35px;
+  text-align: center;
+  color: #FFF;
+  background-color: #87CEEB;
+  border-radius: 2px;
+  margin-right: 10px;
+  text-decoration: none;
+  transition: background .15s ease-in, transform .25s ease-in-out;
+}
+@media screen and (max-width: 580px) {
+  form {
+    width: 95%;
+  }
+}
+
+/*button:active, button:hover, button:focus {
+  outline: 0;
+  cursor: pointer;
+  background: rgba(255, 142, 69, 0.5);
+  transform: scale(1.07);
+}*/
+
+textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
+  border-color: rgba(229, 103, 23, 0.8);
+  box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(229, 103, 23, 0.6);
+  outline: 0 none;
+}
+
+.note {
+  display: inline-block;
+  background-color: transparent;
+  padding: 5px;
+  font-family: 'Nunito', sans-serif;
+}
+.note .inner {
+  background-color: #FFF6A7;
+  padding: 5px;
+  border-radius: 5px;
+  height: 230px;
+  color: #8F754F;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.note .title {
+  background-color: #FFF275;
+  padding: 1px;
+  height: 45px;
+}
+.note .title h2 {
+  display: inline-block;
+}
+.note .btn {
+  background-color: #58A33A;
+  color: #FFF;
+  margin: 1px 0px 1px 5px;
+  float: right;
+}
+.note .del {
+  background-color: #DD4B1A;
+}
+.note .save {
+  background-color: #E9A553;
+}
+.note input, .note textarea {
+  margin: 1px;
+  width: 100%;
+  border-radius: 5px;
+}
+.note span {
+  padding-left: 15px;
+}
