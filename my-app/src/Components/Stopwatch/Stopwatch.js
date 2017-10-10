@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+//make sure time is on 60 format and not 100
 const formattedSeconds = (sec) =>
   Math.floor(sec / 60) +
     ':' +
@@ -17,6 +18,7 @@ class Stopwatch extends React.Component {
     this.incrementer = null;
   }
 
+  //Starts the clock
   handleStartClick() {
     this.incrementer = setInterval( () =>
       this.setState({
@@ -25,6 +27,7 @@ class Stopwatch extends React.Component {
     , 1000);
   }
 
+  //stops the clock
   handleStopClick() {
     clearInterval(this.incrementer);
     this.setState({
@@ -32,6 +35,7 @@ class Stopwatch extends React.Component {
     });
   }
 
+  //reset clock to 0
   handleResetClick() {
     clearInterval(this.incrementer);
     this.setState({
@@ -40,6 +44,7 @@ class Stopwatch extends React.Component {
     });
   }
 
+  //add new lap time
   handleLabClick() {
     this.setState({
       laps: this.state.laps.concat([this.state.secondsElapsed])
@@ -61,7 +66,7 @@ class Stopwatch extends React.Component {
 
           {(this.state.secondsElapsed !== 0 &&
             this.incrementer !== this.state.lastClearedIncrementer
-            ? <Button onClick={this.handleLabClick.bind(this)}>lab</Button>
+            ? <Button onClick={this.handleLabClick.bind(this)}>lap</Button>
             : null
           )}
 
@@ -83,14 +88,6 @@ class Stopwatch extends React.Component {
   }
 }
 
-/** verbose component before 0.14
-class Button extends React.Component {
-  render() {
-    return <button type="button" {...this.props}
-                   className={"btn " + this.props.className } />;
-  }
-}
-*/
 
 const Button = (props) =>
   <button type="button" {...props} className={"sbtn " + props.className } />;
