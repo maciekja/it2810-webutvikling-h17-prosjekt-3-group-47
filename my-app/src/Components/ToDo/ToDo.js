@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import done from './done.png'
+import done from '../../Images/done.png'
+import notdone from '../../Images/notdone.png'
+import trash from '../../Images/trash.png'
 
 class ToDo extends React.Component {
    constructor(props) {
@@ -89,9 +91,9 @@ class Head extends React.Component {
     return (
       <div className="sidebar">
         <form>
-          <h2>Name:</h2>
+          <h2>Task:</h2>
           <input type="text" value={this.state.title} onChange={this.changeTitle}
-          className="head-input" placeholder="Enter title" />
+          className="head-input" placeholder="Enter task" />
         <span onClick={this.handleSubmit} className="btnSidebar">Save</span>
         </form>
       </div>

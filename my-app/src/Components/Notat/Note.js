@@ -16,23 +16,28 @@ class Note extends React.Component {
     this.state = {title: this.props.title, text: this.props.text, editing: false}; //by default render as text
   }
 
+  //edit given note
   edit() {
     this.props.onUpdate(this.props.index, this.state.title, this.state.text);
     this.setState({editing: !this.state.editing});
   }
 
+  //delete given note
   delete() {
     this.props.onRemove(this.props.index);
   }
 
+  //change title of given note
   changeTitle(e) {
     this.setState({title: e.target.value});
   }
 
+  //changes text of given note
   changeText(e) {
     this.setState({text: e.target.value});
   }
 
+  //loades given note or edit
   renderNoteOrEdit() {
     if(this.state.editing) {
       return (
@@ -40,7 +45,7 @@ class Note extends React.Component {
           <div className="title">
 					<input type="text" className="editInput" value={this.state.title} onChange={this.changeTitle}  />
 						<div className="btnz">
-							<span className="noteBtnEdit" onClick={this.edit}>&#10003;</span>
+							<span className="noteBtnCheck" onClick={this.edit}>&#10003;</span>
 						</div>
           </div>
 

@@ -15,14 +15,17 @@ class Form extends React.Component {
     this.state = {title: '', text: ''};
   }
 
+  //changes title to note
   changeTitle(e) {
     this.setState({title: e.target.value});
   }
 
+  //changes text to note
   changeText(e) {
     this.setState({text: e.target.value});
   }
 
+  //submits the changes
   handleSubmit(e) {
     if(this.state.title != '' || this.state.text != '') {
 			this.props.onSend(this.state.title, this.state.text);
@@ -31,6 +34,7 @@ class Form extends React.Component {
 		}
   }
 
+  //clears note
   handleClear(e) {
     this.setState({title: '', text: ''});
     e.preventDefault();

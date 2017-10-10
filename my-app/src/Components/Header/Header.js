@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import logo from './logo.png'
-import remindMe from './remindMe.png'
-import notes from './notes.png'
-import stopwatch from './Stopwatch.png'
-import todo from './todo.png'
+import logo from '../../Images/logo.png'
+import remindMe from '../../Images/remindMe.png'
+import notes from '../../Images/notes.png'
+import stopwatch from '../../Images/Stopwatch.png'
+import todo from '../../Images/todo.png'
+
+/*
+Creating a header component.
+Importing several images as buttons.
+Linking with "Link to" -tag instead of origianl html "a href".
+*/
 
 class Header extends Component {
   render() {
