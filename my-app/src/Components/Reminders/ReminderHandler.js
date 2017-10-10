@@ -8,19 +8,19 @@ class ReminderHandler extends React.Component {
   constructor(props) {
     super(props);
     this.changeTitle = this.changeTitle.bind(this);
-		this.changeDone = this.changeDone.bind(this);
+		this.changePastDate = this.changePastDate.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
 
-    this.state = {reminders: '', done: true, deadline: moment()};
+    this.state = {reminders: '', pastDate: false, deadline: moment()};
   }
 
   changeTitle(e) {
     this.setState({reminders: e.target.value});
   }
 
-	changeDone(e) {
-		this.setState({done: e.target.value});
+	changePastDate(e) {
+		this.setState({pastDate: e.target.value});
 	}
 
   changeDate(e) {
@@ -29,7 +29,7 @@ class ReminderHandler extends React.Component {
 
   handleSubmit(e) {
     if(this.state.reminders !== '') {
-			this.props.onSend(this.state.deadline, this.state.reminders, this.state.done);
+			this.props.onSend(this.state.deadline, this.state.reminders, this.state.pastDate);
 			this.setState({reminders: ''});
 			e.preventDefault();
 		}
