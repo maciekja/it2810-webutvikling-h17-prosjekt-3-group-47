@@ -37,7 +37,7 @@ class ReminderItem extends React.Component {
     if(this.props.pastDate) {
       return (<div className="todoitem pastDate">
                 <div className="title" onClick={this.change}>
-                  {this.props.deadline.toString()} 
+                  {this.props.deadline.toString()}<br/>
 									{this.props.title}
                   <span className="close" onClick={this.delete}>&times;</span>
                 </div>
@@ -46,7 +46,7 @@ class ReminderItem extends React.Component {
     } else {
        return (<div className="todoitem not-pastDate">
                  <div className="title" onClick={this.change}>
-                     {this.props.deadline.toString()}
+                     {this.props.deadline.toString()}<br/>
                      {this.props.title}
                      <span className="close" onClick={this.delete}>&times;</span>
                  </div>
