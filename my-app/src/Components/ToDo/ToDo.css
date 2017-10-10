@@ -12,27 +12,37 @@
 	border-radius: 5px;
 	margin-bottom: 5px;
 	background-color: rgba(32, 32, 128, 0.5);
-} .head-left {
+}
+
+.head-left {
 	text-align: center;
 	font-size: 24px;
 	flex: 1;
 	margin: 5px 0px;
 	display: flex;
-} .head-left * {
+}
+
+.head-left * {
 	flex: 1;
 	align-self: center;
-}.head-right {
+}
+
+.head-right {
 	flex: 2;
 	display: flex;
 	flex-wrap: wrap;
-} .head-input {
+}
+
+.head-input {
 	flex: 2;
 	font-size: 18px;
 	padding-left: 10px;
 	border: 0;
 	border-radius: 5px;
 	margin: 5px 5px;
-} .save {
+}
+
+.save {
 	padding: 10px;
 	margin: 5px 5px;
   background: #DDD;
@@ -44,7 +54,9 @@
   cursor: pointer;
   transition: 0.3s;
 	border-radius: 5px;
-} .save:hover {
+}
+
+.save:hover {
   background: #EEE;
 }
 
@@ -58,16 +70,24 @@
 	margin-bottom: 1px;
 	border: 3px rgba(128, 128, 128, 0.3) solid;
 	border-radius: 5px;
-} .not-done {
+}
+
+.not-done {
 	padding: 2px 20px;
 	background-color: rgba(16, 16, 16, 0.3);
-} .done {
+}
+
+.done {
 	text-decoration: line-through;
 	padding: 2px 20px;
 	background: rgba(16, 64, 16, 0.3);
-}.todos div:nth-child(even) .done {
+}
+
+.todos div:nth-child(even) .done {
 background: rgba(16, 64, 16, 0.4);
-} .todos div:nth-child(even) .not-done {
+}
+
+.todos div:nth-child(even) .not-done {
 background-color: rgba(16, 16, 16, 0.35);
 }
 
