@@ -15,7 +15,7 @@ ReactDOM.render(
   <Router>
     <App>
       <Route exact path="/" component={LandingPage} />
-      <Route path="/calendar" component={Stopwatch} />
+      <Route path="/stopwatch" component={Stopwatch} />
       <Route path="/notes" component={Notes} />
       <Route path="/todo" component={Todo} />
       <Route path="/reminders" component={Reminders} />

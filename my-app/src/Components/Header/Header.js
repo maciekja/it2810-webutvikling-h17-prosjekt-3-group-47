@@ -4,7 +4,7 @@ import './Header.css';
 import logo from './logo.png'
 import remindMe from './remindMe.png'
 import notes from './notes.png'
-import calendar from './calendar.png'
+import stopwatch from './Stopwatch.png'
 import todo from './todo.png'
 
 class Header extends Component {
@@ -15,7 +15,7 @@ class Header extends Component {
         <Link to="reminders"><button className="button" type="button"><img className="IMG" src={remindMe} /><br />Reminders</button></Link>
         <Link to="todo"><button className="button" type="button"><img className="IMG" src={todo} /><br />ToDo</button></Link>
         <Link to="notes"><button className="button" type="button"><img className="IMG" src={notes} /><br />Notes</button></Link>
-        <Link to="calendar"><button className="button" type="button"><img className="IMG" src={calendar} /><br />Calendar</button></Link>
+        <Link to="stopwatch"><button className="button" type="button"><img className="IMG" src={stopwatch} /><br />Stopwatch</button></Link>
       </div>
     );
   }
