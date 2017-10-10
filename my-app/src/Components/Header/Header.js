@@ -12,10 +12,12 @@ class Header extends Component {
     return (
       <div className="header">
         <img id="logoIMG" src={logo} />
-        <Link to="reminders"><button className="button" type="button"><img className="IMG" src={remindMe} /><br />Reminders</button></Link>
-        <Link to="todo"><button className="button" type="button"><img className="IMG" src={todo} /><br />ToDo</button></Link>
-        <Link to="notes"><button className="button" type="button"><img className="IMG" src={notes} /><br />Notes</button></Link>
-        <Link to="calendar"><button className="button" type="button"><img className="IMG" src={calendar} /><br />Calendar</button></Link>
+        <div className="navigation">
+          <Link to="reminders"><button className="button" type="button"><img className="IMG" src={remindMe} /><br />Reminders</button></Link>
+          <Link to="todo"><button className="button" type="button"><img className="IMG" src={todo} /><br />ToDo</button></Link>
+          <Link to="notes"><button className="button" type="button"><img className="IMG" src={notes} /><br />Notes</button></Link>
+          <Link to="calendar"><button className="button" type="button"><img className="IMG" src={calendar} /><br />Calendar</button></Link>
+        </div>
       </div>
     );
   }
