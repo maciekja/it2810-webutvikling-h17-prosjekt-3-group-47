@@ -14,53 +14,53 @@ class Reminders extends React.Component {
     this.removeReminders = this.removeReminders.bind(this);
     this.updateReminders = this.updateReminders.bind(this);
 
-    //Initialize notes
-    this.state = {notes: []};
+    //Initialize reminders
+    this.state = {rnotes: []};
   }
 
-  //If the component was successfully mounted, get notes from local storage
+  //If the component was successfully mounted, get rnotes from local storage
   componentDidMount() {
-    let notes = localStorage.getItem("notes");
-      if (notes) {
-         this.setState({notes: JSON.parse(notes)});
+    let rnotes = localStorage.getItem("rnotes");
+      if (rnotes) {
+         this.setState({rnotes: JSON.parse(rnotes)});
       }
   }
 
   //Add new reminder with date and title/reminder which is by default not completed
   newReminders(date, title) {
-    let notes = [{deadline: date, title: title, completed: false}].concat(this.state.notes);
-    this.saveReminders(notes);
+    let rnotes = [{deadline: date, title: title, completed: false}].concat(this.state.rnotes);
+    this.saveReminders(rnotes);
   }
 
   //Stringify reminder as JSON-object, and set to state
-  saveReminders(notes) {
-    localStorage.setItem('notes', JSON.stringify(notes));
-    this.setState({notes: notes});
+  saveReminders(rnotes) {
+    localStorage.setItem('rnotes', JSON.stringify(rnotes));
+    this.setState({rnotes: rnotes});
   }
 
   //Functionality to remove reminder from list
   removeReminders(index) {
-    let notes = this.state.notes;
-    notes.splice(index, 1);
-    this.saveReminders(notes);
+    let rnotes = this.state.rnotes;
+    rnotes.splice(index, 1);
+    this.saveReminders(rnotes);
   }
 
   //Updates the list if a change regarding completion has occured
   updateReminders(index, completed) {
-    let notes = this.state.notes;
-    this.saveReminders(notes);
+    let rnotes = this.state.rnotes;
+    this.saveReminders(rnotes);
   }
 
   render() {
     //Loops through all reminders, and prints them out
-    let notes = this.state.notes.map((obj, i) =>
+    let rnotes = this.state.rnotes.map((obj, i) =>
       <ReminderItem key={i} index={i} deadline={obj.deadline} title={obj.title} completed={obj.completed} onUpdate={this.updateReminders} onRemove={this.removeReminders} />
     );
     return (
       <div className="content">
 			  <ReminderHandler onSend={this.newReminders}/>
         <div className="container-fluid">
-          {this.state.notes.length > 0 ? notes : ""}
+          {this.state.rnotes.length > 0 ? rnotes : ""}
         </div>
       </div>
     )
