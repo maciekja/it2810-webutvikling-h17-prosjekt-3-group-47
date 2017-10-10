@@ -7,26 +7,32 @@ import "react-datepicker/dist/react-datepicker.css";
 class ReminderHandler extends React.Component {
   constructor(props) {
     super(props);
+
+    //Binds handlers to functions to avoid undefined functions
     this.changeTitle = this.changeTitle.bind(this);
-		this.changePastDate = this.changePastDate.bind(this);
+		this.changeCompletion = this.changeCompletion.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
 
     this.state = {reminders: '', pastDate: false, deadline: moment()};
   }
 
+  //Update title/reminder
   changeTitle(e) {
     this.setState({reminders: e.target.value});
   }
 
-	changePastDate(e) {
+  //Update completion
+	changeCompletion(e) {
 		this.setState({pastDate: e.target.value});
 	}
 
+  //Update deadline
   changeDate(e) {
     this.setState({deadline: e.target.value})
   }
 
+  //On send, add notes to state unless state is empty
   handleSubmit(e) {
     if(this.state.reminders !== '') {
 			this.props.onSend(this.state.deadline, this.state.reminders, this.state.pastDate);
@@ -35,6 +41,7 @@ class ReminderHandler extends React.Component {
 		}
   }
 
+  //Change the deadline
   handleChange(date) {
     this.setState({
       deadline: date
