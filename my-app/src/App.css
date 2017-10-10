@@ -270,25 +270,18 @@ textarea {
 	text-overflow: hidden;
 	overflow: hidden;
 	border-radius: 5px;
-}
-
-.todos div:nth-child(even) .done {
-	background: rgba(16, 64, 16, 0.4);
-}
-
-.todos div:nth-child(even) .not-done {
-	background-color: rgba(16, 16, 16, 0.35);
+  margin: 10px 0px 10px 0px;
 }
 
 .not-done {
 	padding: 2px 20px;
-	background-color: rgba(16, 16, 16, 0.3);
+	background-color: white;
 }
 
 .done {
 	text-decoration: line-through;
 	padding: 2px 20px;
-	background: rgba(16, 64, 16, 0.3);
+	background-color: #29EE65;
 }
 
 .close {

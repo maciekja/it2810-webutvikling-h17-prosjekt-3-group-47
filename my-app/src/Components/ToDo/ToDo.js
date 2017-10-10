@@ -130,6 +130,7 @@ class ToDoItem extends React.Component {
     if(this.props.done) {
       return (
         <div className="todoitem done">
+          <div className="check"></div>
           <div className="title" onClick={this.change}>
             {this.props.title}
           </div>
@@ -139,6 +140,7 @@ class ToDoItem extends React.Component {
     } else {
        return (
          <div className="todoitem not-done">
+           <div className="check"></div>
            <div className="title" onClick={this.change}>
              {this.props.title}
            </div>
