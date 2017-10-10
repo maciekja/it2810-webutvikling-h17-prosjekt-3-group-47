@@ -58,10 +58,10 @@ class Notat extends Component {
               <Note key={i} index={i} title={obj.title} text={obj.text} onUpdate={this.updateNote} onRemove={this.removeNote} />
               );
       return (
-               <div className="notes">
-							 <Form onSend={this.newNote}/>
-                   {this.state.notes.length > 0 ? notes : ""}
-               </div>
+	       <div className="notes">
+				 <Form onSend={this.newNote}/>
+	           {this.state.notes.length > 0 ? notes : ""}
+	       </div>
       );
   }
 }
@@ -97,40 +97,42 @@ class Note extends React.Component {
 
   renderNoteOrEdit() {
     if(this.state.editing) {
-      return (<div className="inner">
-                <div className="title">
-								<input type="text" className="editInput" value={this.state.title} onChange={this.changeTitle}  />
-									<div className="btnz">
-										<span className="noteBtn" onClick={this.edit}>&#10003;</span>
-	                	<span className="noteBtn" onClick={this.delete}>&#10060;</span>
-									</div>
-                </div>
+      return (
+				<div className="inner">
+          <div className="title">
+					<input type="text" className="editInput" value={this.state.title} onChange={this.changeTitle}  />
+						<div className="btnz">
+							<span className="noteBtn" onClick={this.edit}>&#10003;</span>
+						</div>
+          </div>
 
-                <div className="">
+          <div className="">
 
-                  <textarea className="editTextarea" value={this.state.text} onChange={this.changeText}/>
-                </div>
+            <textarea className="editTextarea" value={this.state.text} onChange={this.changeText}/>
+          </div>
 
-             </div>)
+       </div>)
     } else {
-       return (<div className="inner">
-                 <div className="title">
-                     <h2>{this.props.title}</h2>
-										 <div className="btnz">
-										 	<span className="noteBtn" onClick={this.edit}>&#9998;</span>
-                     	<span className="noteBtn" onClick={this.delete}>&#10060;</span>
-										 </div>
-                 </div>
-                 <div className="">
-                   <p>{this.props.text}</p>
-                 </div>
-               </div>)
+       return (
+				<div className="inner">
+        	<div className="title">
+      		<h2>{this.props.title}</h2>
+					<div className="btnz">
+					 <span className="noteBtn" onClick={this.edit}>&#9998;</span>
+           <span className="noteBtn" onClick={this.delete}>&#10060;</span>
+					</div>
+				</div>
+  			<div className="">
+        	<p>{this.props.text}</p>
+      	</div>
+  		</div>)
     }
   }
   render() {
-    return ( <div className="note">
-                {this.renderNoteOrEdit()}
-             </div>
+    return (
+			<div className="note">
+      	{this.renderNoteOrEdit()}
+      </div>
     )
   }
 }
@@ -165,24 +167,25 @@ class Form extends React.Component {
   }
 
   render() {
-    return ( <form className="newNote" id="form">
-								<div className="newNoteHead">
-									<div className="head-left">
-										<span>Post-it-notes:</span>
-									</div>
-									<div className="head-right">
-                  	<input type="text" className="input" value={this.state.title}
-										onChange={this.changeTitle} placeholder="Enter new title" />
-										<span onClick={this.handleSubmit} className="btn">Save</span>
-										<span onClick={this.handleClear} className="btn">Clear</span>
-									</div>
-								</div>
-								<div className="newBody">
-									<textarea value={this.state.text} onChange={this.changeText}
-									placeholder="Enter message" rows="4"/>
-								</div>
+    return (
+			<form className="newNote" id="form">
+				<div className="newNoteHead">
+					<div className="head-left">
+						<span>Post-it-notes:</span>
+					</div>
+					<div className="head-right">
+	        	<input type="text" className="input" value={this.state.title}
+						onChange={this.changeTitle} placeholder="Enter new title" />
+						<span onClick={this.handleSubmit} className="btn">Save</span>
+						<span onClick={this.handleClear} className="btn">Clear</span>
+					</div>
+				</div>
+				<div className="newBody">
+					<textarea value={this.state.text} onChange={this.changeText}
+					placeholder="Enter message" rows="4"/>
+				</div>
 
-              </form>  )
+	    </form>  )
   }
 }
 

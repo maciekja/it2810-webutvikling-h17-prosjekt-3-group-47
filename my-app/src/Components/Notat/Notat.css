@@ -75,8 +75,8 @@
 	white-space: nowrap;
 } .note .title .btnz {
 	position: absolute;
-	right: 0;
-	top: 0;
+	right: 5px;
+	top: 5px;
 }
 .noteBtn {
 	width: 20px;
@@ -99,7 +99,8 @@
 	border: 0;
 	border-radius: 5px;
 	margin: 5px 5px;
-	width: 210px;
+	width: 230px;
+	height: 28px;
 }
 .editTextarea {
 	font-size: 16px;
