@@ -14,7 +14,7 @@ class Reminders extends React.Component {
     this.removeReminders = this.removeReminders.bind(this);
     this.updateReminders = this.updateReminders.bind(this);
 
-    //Initialize rnotes
+    //Initialize reminders
     this.state = {rnotes: []};
   }
 
