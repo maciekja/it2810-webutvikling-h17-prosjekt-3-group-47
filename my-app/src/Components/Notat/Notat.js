@@ -22,28 +22,33 @@ class Notat extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  //retrieves notes from localStorage
   componentDidMount() {
     let notes = localStorage.getItem("notes");
       if (notes)
          this.setState({notes: JSON.parse(notes)});
   }
 
+  //creates new note
   newNote(title, text) {
     let notes = [{title: title, text: text}].concat(this.state.notes);
     this.saveNote(notes);
   }
 
+  //saves new note to localStorage
   saveNote(notes) {
     localStorage.setItem('notes', JSON.stringify(notes));
     this.setState({notes: notes});
   }
 
+  //removes note from localStorage
   removeNote(index) {
     let notes = this.state.notes;
     notes.splice(index, 1);
     this.saveNote(notes);
   }
 
+  //updates given note
   updateNote(index, title, text) {
     let notes = this.state.notes;
     notes[index].title = title;
@@ -51,6 +56,7 @@ class Notat extends Component {
     this.saveNote(notes);
   }
 
+  //change state 
   handleClick() {
     console.log("Test")
     this.setState({

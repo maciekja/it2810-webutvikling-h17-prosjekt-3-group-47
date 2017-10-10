@@ -4,6 +4,11 @@ body {
   background-color: #efeff5;
 }
 
+h1{
+  margin-top:2vh;
+  margin-bottom: 2vh;
+}
+
 
 .title{
 	width: 75vw;
@@ -71,7 +76,7 @@ body {
 .button:hover{
   border-color: black;
   color: grey;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 /* Header css stopp */
@@ -237,7 +242,19 @@ textarea {
 .noteBtn {
 	width: 20px;
 	padding: 5px;
-	float: left;
+  background: #DDD;
+  color: #555;
+	margin-left: 5px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+	border-radius: 5px;
+}
+
+.noteBtnCheck {
+	width: 20px;
+	padding: 5px;
+  float: left;
   background: #DDD;
   color: #555;
 	margin-left: 5px;
@@ -263,13 +280,20 @@ textarea {
 
 .todoitem {
 	user-select: none;
-	cursor: pointer;
+  width:60%;
+  margin-left: 20px;
+  cursor: pointer;
 	position: relative;
 	white-space: nowrap;
+  font-size: 20px;
 	text-overflow: hidden;
 	overflow: hidden;
 	border-radius: 5px;
   margin: 10px 0px 10px 0px;
+}
+
+.todos{
+  margin-left: 15vh;
 }
 
 .check {
