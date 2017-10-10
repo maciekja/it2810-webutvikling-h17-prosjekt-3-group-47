@@ -48,7 +48,7 @@ class ToDo extends React.Component {
 
     return (	<div className="content">
 								<Head onSend={this.newToDo}/>
-              	<div className="container-fluid">
+              	<div className="todos">
                   {this.state.todos.length > 0 ? todos : ""}
               	</div>
           		</div>
