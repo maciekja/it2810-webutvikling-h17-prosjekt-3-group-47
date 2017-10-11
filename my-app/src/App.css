@@ -298,7 +298,7 @@ textarea {
 /* Reminders css start */
 .pastDate {
 	padding: 2px 20px;
-	background-color: rgba(16, 16, 16, 0.3);
+	background-color: #ffffff;
 }
 
 .not-pastDate {
@@ -309,18 +309,10 @@ textarea {
 
 .close {
 	position: absolute;
-	width: 30px;
 	height: 30px;
 	right: 0;
 	top: 0;
-	background: rgba(256, 128, 128, 0.4);
 	text-align: center;
-}
-
-.head-right {
- flex: 2;
- display: flex;
- flex-wrap: wrap;
 }
 
 .reminderItem {
