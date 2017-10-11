@@ -16,7 +16,7 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
-        <img id="logoIMG" src={logo} />
+        <Link to="LandingPage"><img id="logoIMG" src={logo} /></Link>
         <div className="navigation">
           <Link to="reminders"><button className="button" type="button"><img className="IMG" src={remindMe} /><br />Reminders</button></Link>
           <Link to="todo"><button className="button" type="button"><img className="IMG" src={todo} /><br />ToDo</button></Link>
