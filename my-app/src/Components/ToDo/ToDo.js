@@ -103,7 +103,7 @@ class Head extends React.Component {
           <h2>Task:</h2>
           <input type="text" value={this.state.title} onChange={this.changeTitle}
           className="head-input" placeholder="Enter task" />
-        <span onClick={this.handleSubmit} className="btnSidebar">Save</span>
+        <button onClick={this.handleSubmit} className="btnSidebar">Save</button>
         </form>
       </div>
     );
