@@ -145,9 +145,9 @@ class ToDoItem extends React.Component {
   renderDoneOrNot() {
     if(this.props.done) {
       return (
-        <div className="todoitem done">
+        <div className="todoitem done" onClick={this.change}>
           <img className="check" src={done} />
-          <div className="titleToDo" onClick={this.change}>
+          <div className="titleToDo">
             {this.props.title}
           </div>
           <div onClick={this.delete}><img className="todoClose" src={trash} /></div>
@@ -155,8 +155,9 @@ class ToDoItem extends React.Component {
       );
     } else {
        return (
-         <div className="todoitem not-done">
-           <div className="titleToDo" onClick={this.change}>
+         <div className="todoitem not-done" onClick={this.change}>
+           <img className="check" src={notdone} />
+           <div className="titleToDo">
              {this.props.title}
            </div>
            <div onClick={this.delete}><img className="todoClose" src={trash} /></div>
