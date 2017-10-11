@@ -7,8 +7,8 @@ body {
 h1{
   margin-top:2vh;
   margin-bottom: 2vh;
+  font-size:
 }
-
 
 .title{
 	width: 75vw;
@@ -45,29 +45,14 @@ h1{
 .button {
     background-color: Transparent;
     transition: all .2s ease-in-out;
-    background-repeat:no-repeat;
     border: none;
     cursor:pointer;
     overflow: hidden;
     float:right;
-    align-items: flex-start;
     text-align: center;
-    cursor: default;
     color: white !important;
-    box-sizing: none;
     padding: 2px 6px 3px;
-    border-style: none;
-    border-image: none;
-    text-rendering: none;
-    color: initial;
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
     display: inline-block;
-    text-align: center;
-    margin: 0em;
     font: 12px system-ui;
     font-weight: bold;
     outline: 0;
@@ -276,7 +261,7 @@ textarea {
 
 /* Notes css stop */
 
-/* To do css start */
+/* Todo css start */
 
 .todoitem {
 	user-select: none;
@@ -318,14 +303,14 @@ textarea {
 .close {
 	position: absolute;
 	width: 30px;
-	height: 30px;
+	height: 100px;
 	right: 0;
 	top: 0;
 	background: rgba(256, 128, 128, 0.4);
 	text-align: center;
 }
 
-/* To do css stop */
+/* Todo css stop */
 
 /* Reminders css start */
 .pastDate {
