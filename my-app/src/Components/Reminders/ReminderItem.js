@@ -1,5 +1,5 @@
 import React from "react";
-
+import trash from '../../Images/trash.png'
 
 class ReminderItem extends React.Component {
   constructor(props) {
@@ -49,21 +49,21 @@ class ReminderItem extends React.Component {
 
     if(this.state.pastDate) {
       return (
-        <div className="todoitem not-pastDate">
+        <div className="reminderItem not-pastDate">
           <div className="title" onClick={this.change}>
-            {date}<br />
+            {date}&nbsp;-&nbsp;
 						{this.props.title}
-            <span className="close" onClick={this.delete}>&times;</span>
+            <span className="close" onClick={this.delete}><img className="todoClose" src={trash} /></span>
           </div>
         </div>
       );
     } else {
        return (
-         <div className="todoitem pastDate">
+         <div className="reminderItem pastDate">
            <div className="title" onClick={this.change}>
-             {date}<br />
+             {date}&nbsp;-&nbsp;
              {this.props.title}
-             <span className="close" onClick={this.delete}>&times;</span>
+             <span className="close" onClick={this.delete}><img className="todoClose" src={trash} /></span>
            </div>
          </div>
       );
