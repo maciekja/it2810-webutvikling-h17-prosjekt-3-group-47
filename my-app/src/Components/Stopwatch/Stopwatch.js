@@ -60,20 +60,20 @@ class Stopwatch extends React.Component {
 
           {(this.state.secondsElapsed === 0 ||
             this.incrementer === this.state.lastClearedIncrementer
-            ? <Button className="start-btn" onClick={this.handleStartClick.bind(this)}>start</Button>
-            : <Button className="stop-btn" onClick={this.handleStopClick.bind(this)}>stop</Button>
+            ? <Button className="start-btn" onClick={this.handleStartClick.bind(this)}>Start</Button>
+            : <Button className="stop-btn" onClick={this.handleStopClick.bind(this)}>Stop</Button>
           )}
 
           {(this.state.secondsElapsed !== 0 &&
             this.incrementer !== this.state.lastClearedIncrementer
-            ? <Button onClick={this.handleLabClick.bind(this)}>lap</Button>
+            ? <Button onClick={this.handleLabClick.bind(this)}>Lap</Button>
             : null
           )}
 
 
           {(this.state.secondsElapsed !== 0 &&
             this.incrementer === this.state.lastClearedIncrementer
-            ? <Button onClick={this.handleResetClick.bind(this)}>reset</Button>
+            ? <Button onClick={this.handleResetClick.bind(this)}>Reset</Button>
             : null
           )}
 
