@@ -11,7 +11,7 @@ h1{
 
 
 .title{
-	width: 75vw;
+	width: 74vw;
 	float: left;
 }
 
@@ -240,21 +240,7 @@ textarea {
 }
 
 .noteBtn {
-	width: 20px;
 	padding: 5px;
-  background: #DDD;
-  color: #555;
-	margin-left: 5px;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-	border-radius: 5px;
-}
-
-.noteBtnCheck {
-	width: 20px;
-	padding: 5px;
-  float: left;
   background: #DDD;
   color: #555;
 	margin-left: 5px;
@@ -268,10 +254,9 @@ textarea {
   background: #EEE;
 }
 
-.note .titleNote .btnz {
-	position: absolute;
-	right: 5px;
-	top: 5px;
+.editInput {
+	margin-top: 5px;
+	width: 200px;
 }
 
 /* Notes css stop */
@@ -299,6 +284,7 @@ textarea {
 .check {
   float: left;
   height: 20px;
+	margin-top: 2px;
 }
 
 .not-done {
@@ -315,14 +301,12 @@ textarea {
   margin-left: 30px;
 }
 
-.close {
+.todoClose {
 	position: absolute;
-	width: 30px;
-	height: 30px;
-	right: 0;
-	top: 0;
-	background: rgba(256, 128, 128, 0.4);
-	text-align: center;
+	width: 20px;
+	height: 20px;
+	right: 15px;
+	top: 4px;
 }
 
 /* To do css stop */

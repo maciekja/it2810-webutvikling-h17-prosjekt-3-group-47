@@ -42,15 +42,14 @@ class Note extends React.Component {
     if(this.state.editing) {
       return (
 				<div className="inner">
-          <div className="title">
+          <div className="titleNote">
 					<input type="text" className="editInput" value={this.state.title} onChange={this.changeTitle}  />
 						<div className="btnz">
-							<span className="noteBtnCheck" onClick={this.edit}>&#10003;</span>
+							<span className="noteBtn" onClick={this.edit}> &#10003; </span>
 						</div>
           </div>
 
           <div className="">
-
             <textarea className="editTextarea" value={this.state.text} onChange={this.changeText}/>
           </div>
 
