@@ -150,7 +150,7 @@ class ToDoItem extends React.Component {
           <div className="titleToDo" onClick={this.change}>
             {this.props.title}
           </div>
-          <img className="todoClose" src={trash} />
+          <div onClick={this.delete}><img className="todoClose" src={trash} /></div>
         </div>
       );
     } else {
@@ -159,7 +159,7 @@ class ToDoItem extends React.Component {
            <div className="titleToDo" onClick={this.change}>
              {this.props.title}
            </div>
-           <img className="todoClose" src={trash} />
+           <div onClick={this.delete}><img className="todoClose" src={trash} /></div>
          </div>
        );
     }
