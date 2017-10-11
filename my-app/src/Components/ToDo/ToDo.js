@@ -4,6 +4,8 @@ import done from '../../Images/done.png'
 import notdone from '../../Images/notdone.png'
 import trash from '../../Images/trash.png'
 
+/* Main component*/
+
 class ToDo extends React.Component {
    constructor(props) {
     super(props);
@@ -13,6 +15,8 @@ class ToDo extends React.Component {
     this.updateToDo = this.updateToDo.bind(this);
     this.state = {todos:[]};
   }
+
+	/* Class functions, all handling todoitems */
 
   componentDidMount() {
     let todos = localStorage.getItem("todos");
@@ -42,6 +46,8 @@ class ToDo extends React.Component {
     this.saveToDo(todos);
   }
 
+	/* Renders the content in a div, and retrieves components from the Head and Note classes*/
+
   render() {
 
   let todos = this.state.todos.map((obj, i) =>
@@ -59,6 +65,8 @@ class ToDo extends React.Component {
     )
   }
 }
+
+/* Head component, the input form that handles new todos. */
 
 class Head extends React.Component {
   constructor(props) {
@@ -86,6 +94,7 @@ class Head extends React.Component {
 		}
   }
 
+	/* Renders the sidebar with the input fields and button */
 
   render() {
     return (
@@ -100,6 +109,8 @@ class Head extends React.Component {
     );
   }
 }
+
+	/* Internal class that handles a single todo-item on the list, and the functionality to change and delete existing notes */
 
 class ToDoItem extends React.Component {
   constructor(props) {
@@ -129,6 +140,8 @@ class ToDoItem extends React.Component {
 		this.setState({done: e.target.value});
 	}
 
+	/* internal function to descide if a todo is done or not, and renders it accordingly */
+
   renderDoneOrNot() {
     if(this.props.done) {
       return (
@@ -137,21 +150,23 @@ class ToDoItem extends React.Component {
           <div className="titleToDo" onClick={this.change}>
             {this.props.title}
           </div>
-          <span className="close" onClick={this.delete}>&times;</span>
+          <div onClick={this.delete}><img className="todoClose" src={trash} /></div>
         </div>
       );
     } else {
        return (
          <div className="todoitem not-done">
-           <div className="check"></div>
            <div className="titleToDo" onClick={this.change}>
              {this.props.title}
            </div>
-           <span className="close" onClick={this.delete}>&times;</span>
+           <div onClick={this.delete}><img className="todoClose" src={trash} /></div>
          </div>
        );
     }
   }
+
+	/* Render function to show a todoitem according to its state */
+
   render() { //xs for phone, sm for tablet, md for desktop
     return (
       <div className="ToDoItem col-xs-10 col-sm-6 col-md-4">

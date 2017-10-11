@@ -7,11 +7,11 @@ body {
 h1{
   margin-top:2vh;
   margin-bottom: 2vh;
-  font-size:
 }
 
+
 .title{
-	width: 75vw;
+	width: 74vw;
 	float: left;
 }
 
@@ -45,14 +45,29 @@ h1{
 .button {
     background-color: Transparent;
     transition: all .2s ease-in-out;
+    background-repeat:no-repeat;
     border: none;
     cursor:pointer;
     overflow: hidden;
     float:right;
+    align-items: flex-start;
     text-align: center;
+    cursor: default;
     color: white !important;
+    box-sizing: none;
     padding: 2px 6px 3px;
+    border-style: none;
+    border-image: none;
+    text-rendering: none;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
     display: inline-block;
+    text-align: center;
+    margin: 0em;
     font: 12px system-ui;
     font-weight: bold;
     outline: 0;
@@ -225,21 +240,7 @@ textarea {
 }
 
 .noteBtn {
-	width: 20px;
 	padding: 5px;
-  background: #DDD;
-  color: #555;
-	margin-left: 5px;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-	border-radius: 5px;
-}
-
-.noteBtnCheck {
-	width: 20px;
-	padding: 5px;
-  float: left;
   background: #DDD;
   color: #555;
 	margin-left: 5px;
@@ -253,15 +254,14 @@ textarea {
   background: #EEE;
 }
 
-.note .titleNote .btnz {
-	position: absolute;
-	right: 5px;
-	top: 5px;
+.editInput {
+	margin-top: 5px;
+	width: 200px;
 }
 
 /* Notes css stop */
 
-/* Todo css start */
+/* To do css start */
 
 .todoitem {
 	user-select: none;
@@ -284,6 +284,7 @@ textarea {
 .check {
   float: left;
   height: 20px;
+	margin-top: 2px;
 }
 
 .not-done {
@@ -300,17 +301,15 @@ textarea {
   margin-left: 30px;
 }
 
-.close {
+.todoClose {
 	position: absolute;
-	width: 30px;
-	height: 100px;
-	right: 0;
-	top: 0;
-	background: rgba(256, 128, 128, 0.4);
-	text-align: center;
+	width: 20px;
+	height: 20px;
+	right: 15px;
+	top: 4px;
 }
 
-/* Todo css stop */
+/* To do css stop */
 
 /* Reminders css start */
 .pastDate {
