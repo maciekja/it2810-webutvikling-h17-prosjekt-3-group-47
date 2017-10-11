@@ -55,7 +55,7 @@ class ToDo extends React.Component {
                );
 
     return (
-			<div className="content">
+			<div className="todo">
         <div className="title"><h1>To do</h1></div>
 				<Head onSend={this.newToDo}/>
       	<div className="todos">

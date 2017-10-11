@@ -316,4 +316,27 @@ textarea {
 	background: rgba(256, 128, 128, 0.4);
 	text-align: center;
 }
+
+.head-right {
+ flex: 2;
+ display: flex;
+ flex-wrap: wrap;
+}
+
+.reminderItem {
+	user-select: none;
+  width:60%;
+  margin-left: 20px;
+  cursor: pointer;
+	position: relative;
+	white-space: nowrap;
+  font-size: 20px;
+	overflow: hidden;
+	border-radius: 5px;
+  margin: 10px 0px 10px 0px;
+}
+
+.container-fluid {
+  margin-left: 15vh;
+}
 /* Reminders css stop */
